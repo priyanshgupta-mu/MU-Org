@@ -1,0 +1,40 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Admins who may edit the org chart. Add/remove emails here and redeploy:
+    //   npx -y firebase-tools@latest deploy --only firestore:rules
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in [
+          'salil.narkar1@mastersunion.org',
+          'priyansh.gupta@mastersunion.org',
+          'rachit.jain@mastersunion.org',
+          'chetan@mu.org',
+          'mahima.mahur@mu.org'
+        ];
+    }
+
+    function validPerson() {
+      let d = request.resource.data;
+      return d.keys().hasOnly(['code', 'name', 'title', 'dept', 'bu', 'subDept', 'managerId', 'empType', 'kras'])
+        && d.name is string && d.name.size() > 0 && d.name.size() <= 200
+        && d.title is string && d.title.size() <= 300
+        && d.dept is string && d.dept.size() > 0 && d.dept.size() <= 40
+        && d.empType is string && d.empType.size() > 0 && d.empType.size() <= 40
+        && (!('code' in d) || (d.code is string && d.code.size() <= 40))
+        && (!('bu' in d) || (d.bu is string && d.bu.size() <= 120))
+        && (!('subDept' in d) || (d.subDept is string && d.subDept.size() <= 120))
+        && (!('managerId' in d) || (d.managerId is string && d.managerId.size() <= 60))
+        && (!('kras' in d) || (d.kras is list && d.kras.size() <= 40));
+    }
+
+    // The org chart is public, so anyone may read the roster.
+    // Only listed admins may change it.
+    match /people/{personId} {
+      allow read: if true;
+      allow create, update: if isAdmin() && validPerson() && personId.size() <= 60;
+      allow delete: if isAdmin();
+    }
+  }
+}

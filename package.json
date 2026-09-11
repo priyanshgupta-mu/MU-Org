@@ -1,0 +1,15 @@
+{
+  "name": "pgp-org-chart",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Masters' Union org chart - Firebase Hosting + Firestore admin panel",
+  "scripts": {
+    "sync": "node -e \"require('fs').copyFileSync('Masters Union Org Chart (1).html','public/index.html');console.log('copied source HTML -> public/index.html')\"",
+    "predev": "npm run sync",
+    "dev": "npx -y firebase-tools@latest emulators:start --only hosting",
+    "predeploy": "npm run sync",
+    "deploy": "npx -y firebase-tools@latest deploy --only hosting",
+    "deploy:rules": "npx -y firebase-tools@latest deploy --only firestore:rules",
+    "deploy:all": "npx -y firebase-tools@latest deploy --only firestore,auth,hosting"
+  }
+}

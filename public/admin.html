@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Org Chart Admin — Masters' Union</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #FAFAFA; color: #171717; font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 13.5px; line-height: 1.45; -webkit-font-smoothing: antialiased; }
+    button { font-family: inherit; font-size: inherit; cursor: pointer; }
+    input, select, textarea { font-family: inherit; font-size: 13.5px; color: inherit; }
+    .hdr { display: flex; align-items: center; gap: 14px; height: 60px; padding: 0 20px; background: #090909; color: #FFFFFF; }
+    .hdr .brand { font-weight: 700; letter-spacing: -0.01em; font-size: 16px; }
+    .hdr .tag { font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; background: #F7D344; color: #090909; padding: 3px 8px; border-radius: 6px; }
+    .hdr .sp { flex: 1; }
+    .hdr a { color: #A3A3A3; font-size: 12.5px; text-decoration: none; }
+    .hdr a:hover { color: #FFFFFF; }
+    .hdr .who { font-size: 12px; color: #A3A3A3; }
+    .stripe { height: 3px; background: linear-gradient(90deg, #39B6D8 0%, #F7D344 50%, #E38330 100%); }
+    .btn { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 14px; border-radius: 8px; border: 1px solid #D4D4D4; background: #FFFFFF; font-weight: 500; transition: all 150ms; }
+    .btn:hover { background: #F5F5F5; }
+    .btn.dark { background: #090909; color: #FFFFFF; border-color: #090909; }
+    .btn.dark:hover { background: #262626; }
+    .btn.yellow { background: #F7D344; border-color: #F7D344; color: #090909; font-weight: 600; }
+    .btn.yellow:hover { background: #EFC72E; }
+    .btn.danger { color: #B3261E; border-color: #E5C1BF; }
+    .btn.danger:hover { background: #FBEDEC; }
+    .btn.sm { height: 28px; padding: 0 10px; font-size: 12px; border-radius: 7px; }
+    .wrap { max-width: 1060px; margin: 0 auto; padding: 22px 20px 80px; }
+    .gate { max-width: 420px; margin: 80px auto; text-align: center; background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 16px; padding: 36px 28px; box-shadow: 0 2px 8px rgba(9,9,9,.06); }
+    .gate h1 { font-size: 20px; margin-bottom: 8px; }
+    .gate p { color: #737373; margin-bottom: 22px; }
+    .toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+    .toolbar input[type=search] { height: 36px; width: 260px; padding: 0 12px; border-radius: 8px; border: 1px solid #D4D4D4; background: #FFFFFF; }
+    .toolbar select { height: 36px; padding: 0 10px; border-radius: 8px; border: 1px solid #D4D4D4; background: #FFFFFF; }
+    .count { color: #737373; font-size: 12.5px; }
+    table { width: 100%; border-collapse: collapse; background: #FFFFFF; border: 1px solid #E5E5E5; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(9,9,9,.05); }
+    thead th { text-align: left; font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #737373; padding: 10px 12px; border-bottom: 1px solid #E5E5E5; background: #FCFCFC; }
+    tbody td { padding: 9px 12px; border-bottom: 1px solid #F0F0F0; vertical-align: middle; }
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: #FAFAFA; }
+    .nm { font-weight: 600; }
+    .sub { color: #737373; font-size: 12px; }
+    .chip { display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; color: #525252; white-space: nowrap; }
+    .dot { width: 9px; height: 9px; border-radius: 3px; flex: none; }
+    .pill { display: inline-block; font-size: 10.5px; font-weight: 600; padding: 2px 8px; border-radius: 20px; background: #F5F5F5; color: #525252; white-space: nowrap; }
+    .pill.open { background: #FDF3D7; color: #8a6d00; }
+    .rowbtns { display: flex; gap: 6px; justify-content: flex-end; }
+    .overlay { position: fixed; inset: 0; background: rgba(9,9,9,.45); display: none; align-items: flex-start; justify-content: center; padding: 40px 16px; overflow: auto; z-index: 50; }
+    .overlay.on { display: flex; }
+    .modal { background: #FFFFFF; border-radius: 16px; width: 100%; max-width: 620px; padding: 24px; box-shadow: 0 24px 60px rgba(9,9,9,.25); }
+    .modal h2 { font-size: 17px; margin-bottom: 18px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 14px; }
+    .grid .full { grid-column: 1 / -1; }
+    label.f { display: block; }
+    label.f span { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #737373; margin-bottom: 4px; }
+    label.f input, label.f select { width: 100%; height: 36px; padding: 0 10px; border-radius: 8px; border: 1px solid #D4D4D4; background: #FFFFFF; }
+    .kra { border: 1px solid #E5E5E5; border-radius: 10px; padding: 10px; margin-bottom: 8px; display: grid; grid-template-columns: 1fr 90px 28px; gap: 8px; }
+    .kra input, .kra textarea { width: 100%; padding: 6px 8px; border-radius: 7px; border: 1px solid #D4D4D4; }
+    .kra textarea { grid-column: 1 / -1; min-height: 52px; resize: vertical; }
+    .kra .x { border: 0; background: transparent; color: #B3261E; font-size: 16px; line-height: 1; align-self: center; }
+    .mfoot { display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px; }
+    .note { background: #FDF3D7; border: 1px solid #F0DFA0; color: #6b5500; border-radius: 10px; padding: 10px 14px; margin-bottom: 16px; font-size: 12.5px; }
+    .err { background: #FBEDEC; border: 1px solid #E5C1BF; color: #8C1D18; border-radius: 10px; padding: 10px 14px; margin-bottom: 16px; font-size: 12.5px; display: none; }
+    .err.on { display: block; }
+    .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #090909; color: #FFFFFF; padding: 10px 18px; border-radius: 10px; font-size: 13px; box-shadow: 0 8px 24px rgba(9,9,9,.3); opacity: 0; pointer-events: none; transition: opacity 200ms; z-index: 60; }
+    .toast.on { opacity: 1; }
+    .hidden { display: none !important; }
+    @media (max-width: 720px) {
+      .grid { grid-template-columns: 1fr; }
+      .hide-m { display: none; }
+      .toolbar input[type=search] { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hdr">
+    <span class="brand">masters&rsquo; union</span>
+    <span class="tag">Org Chart Admin</span>
+    <span class="sp"></span>
+    <a href="/" target="_blank" rel="noopener">View chart ↗</a>
+    <span class="who" id="who"></span>
+    <button class="btn sm hidden" id="signout">Sign out</button>
+  </header>
+  <div class="stripe"></div>
+
+  <!-- sign-in gate -->
+  <div class="gate" id="gate">
+    <h1>Admin sign in</h1>
+    <p>Sign in with your Masters&rsquo; Union Google account.<br>Only listed admins can make changes.</p>
+    <button class="btn yellow" id="signin" style="margin: 0 auto;">Continue with Google</button>
+    <p id="gateErr" style="color:#8C1D18; margin-top: 16px; display: none;"></p>
+  </div>
+
+  <!-- main app -->
+  <div class="wrap hidden" id="app">
+    <div class="err" id="appErr"></div>
+    <div class="note hidden" id="seedNote">
+      The live database is empty — the chart is still using the data bundled in the page.
+      <button class="btn sm yellow" id="importBtn" style="margin-left: 8px;">Import current roster (one-time)</button>
+    </div>
+
+    <div class="toolbar">
+      <input type="search" id="q" placeholder="Search people, roles, teams">
+      <select id="deptFilter"><option value="all">All departments</option></select>
+      <span class="count" id="count"></span>
+      <span class="sp" style="flex:1"></span>
+      <button class="btn yellow hidden" id="syncBtn"></button>
+      <button class="btn hidden" id="reconcileBtn"></button>
+      <button class="btn hidden" id="fixBtn"></button>
+      <button class="btn dark" id="addBtn">+ Add person</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Person</th>
+          <th class="hide-m">Department</th>
+          <th class="hide-m">Manager</th>
+          <th class="hide-m">Type</th>
+          <th style="text-align:right">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <!-- editor modal -->
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <h2 id="mTitle">Edit person</h2>
+      <div class="grid">
+        <label class="f full"><span>Name</span><input id="fName" maxlength="200"></label>
+        <label class="f full"><span>Job title</span><input id="fTitle" maxlength="300"></label>
+        <label class="f"><span>Department</span><select id="fDept"></select></label>
+        <label class="f"><span>Employment type</span><select id="fType"></select></label>
+        <label class="f full"><span>Manager</span><select id="fMgr"></select></label>
+        <label class="f"><span>Sub-department (optional)</span><input id="fSub" maxlength="120"></label>
+        <label class="f"><span>Employee code (optional)</span><input id="fCode" maxlength="40"></label>
+        <label class="f full"><span>Business unit (optional)</span><input id="fBu" maxlength="120"></label>
+        <div class="full">
+          <span style="display:block; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #737373; margin-bottom: 6px;">KRAs / goals</span>
+          <div id="kras"></div>
+          <button class="btn sm" id="addKra">+ Add KRA</button>
+        </div>
+      </div>
+      <div class="mfoot">
+        <button class="btn" id="mCancel">Cancel</button>
+        <button class="btn dark" id="mSave">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="/seed.js"></script>
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js';
+    import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js';
+    import { getFirestore, collection, getDocs, doc, setDoc, deleteDoc, writeBatch } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDrfW3Lyuz5nKGlrokYSBAI_4FLPofzjPU",
+      authDomain: "pgp-mu-org-char.firebaseapp.com",
+      projectId: "pgp-mu-org-char",
+      storageBucket: "pgp-mu-org-char.firebasestorage.app",
+      messagingSenderId: "717653481938",
+      appId: "1:717653481938:web:b405d7a659e6e7dbef100b"
+    };
+    // Mirrors the list in firestore.rules — the rules are what actually enforce access.
+    const ADMIN_EMAILS = ['salil.narkar1@mastersunion.org', 'priyansh.gupta@mastersunion.org', 'rachit.jain@mastersunion.org', 'chetan@mu.org', 'mahima.mahur@mu.org'];
+    const EMP_TYPES = ['Full-time', 'Open role', 'Consultant', 'Intern', 'Vertical', 'Inferred'];
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+    const SEED = window.__MU_SEED || { departments: [], people: [] };
+    const DEPTS = SEED.departments;
+    const deptById = Object.fromEntries(DEPTS.map(d => [d.id, d]));
+
+    const $ = id => document.getElementById(id);
+    let people = [];           // live list from Firestore (or empty before import)
+    let editingId = null;      // doc id being edited, null = new person
+    const byId = () => Object.fromEntries(people.map(p => [p.id, p]));
+
+    // ---------- auth ----------
+    const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: 'select_account' });
+
+    $('signin').onclick = async () => {
+      $('gateErr').style.display = 'none';
+      try { await signInWithPopup(auth, provider); }
+      catch (e) {
+        if (e.code === 'auth/popup-blocked' || e.code === 'auth/operation-not-supported-in-this-environment') {
+          await signInWithRedirect(auth, provider);
+        } else {
+          $('gateErr').textContent = e.message; $('gateErr').style.display = 'block';
+        }
+      }
+    };
+    getRedirectResult(auth).catch(() => {});
+    $('signout').onclick = () => signOut(auth);
+
+    onAuthStateChanged(auth, async user => {
+      if (user) {
+        $('who').textContent = user.email;
+        $('signout').classList.remove('hidden');
+        $('gate').classList.add('hidden');
+        $('app').classList.remove('hidden');
+        if (!ADMIN_EMAILS.includes(user.email)) {
+          showErr('You are signed in as ' + user.email + ', which is not on the admin list. You can browse, but saves will be rejected. Ask an admin to add you in firestore.rules.');
+        }
+        await reload();
+      } else {
+        $('who').textContent = '';
+        $('signout').classList.add('hidden');
+        $('gate').classList.remove('hidden');
+        $('app').classList.add('hidden');
+      }
+    });
+
+    // ---------- data ----------
+    async function reload() {
+      const snap = await getDocs(collection(db, 'people'));
+      people = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+      people.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+      $('seedNote').classList.toggle('hidden', people.length > 0);
+      const have = new Set(people.map(p => p.id));
+      const missing = SEED.people.filter(p => !have.has(p.id));
+      const sb = $('syncBtn');
+      if (people.length && missing.length) {
+        sb.textContent = 'Add ' + missing.length + ' new people from update';
+        sb.classList.remove('hidden');
+      } else sb.classList.add('hidden');
+      const drift = rosterDiff();
+      const rb = $('reconcileBtn');
+      if (people.length && (drift.changed.length || drift.gone.length)) {
+        rb.textContent = 'Reconcile ' + (drift.changed.length + drift.gone.length) + ' differences';
+        rb.classList.remove('hidden');
+      } else rb.classList.add('hidden');
+      const fixes = pendingFixes();
+      const fb = $('fixBtn');
+      if (fixes.length) {
+        fb.textContent = 'Apply ' + fixes.length + ' data fixes';
+        fb.classList.remove('hidden');
+      } else fb.classList.add('hidden');
+      render();
+    }
+
+    // Where the live database has drifted from the bundled roster: people whose
+    // details differ, and people the roster no longer carries. Additions are the
+    // sync button's job, so they are not counted here.
+    function rosterDiff() {
+      const inSeed = new Set(SEED.people.map(p => p.id));
+      const live = Object.fromEntries(people.map(p => [p.id, p]));
+      const same = (a, b) => JSON.stringify(personDoc(a)) === JSON.stringify(personDoc(b));
+      return {
+        changed: SEED.people.filter(p => live[p.id] && !same(p, live[p.id])),
+        gone: people.filter(p => !inSeed.has(p.id))
+      };
+    }
+
+    // Data corrections: docs still carrying an old auto-generated value get the seed's value.
+    // A doc an admin already edited (value differs from `from`) is never touched.
+    const DATA_FIXES = ['cfx1','cfx2','cfx3','cfx4','cfx5','cfx6','cfx7','cfx8','cfx9','cfx11']
+      .map(id => ({ id, field: 'title', from: ['Head of Department', 'Manager'], to: '' }));
+    function pendingFixes() {
+      return DATA_FIXES.filter(f => {
+        const p = people.find(x => x.id === f.id);
+        return p && f.from.includes(p[f.field] || '') && (p[f.field] || '') !== f.to;
+      });
+    }
+    $('fixBtn').onclick = async () => {
+      const fixes = pendingFixes();
+      if (!fixes.length) return;
+      if (!confirm('Apply ' + fixes.length + ' data fixes? (Removes auto-generated designations that were not in the source sheet.)')) return;
+      $('fixBtn').disabled = true;
+      try {
+        const batch = writeBatch(db);
+        fixes.forEach(f => {
+          const p = people.find(x => x.id === f.id);
+          batch.set(doc(db, 'people', f.id), { ...personDoc(p), [f.field]: f.to });
+        });
+        await batch.commit();
+        toast('Applied ' + fixes.length + ' fixes.');
+        await reload();
+      } catch (e) { showErr('Fix failed: ' + e.message); }
+      $('fixBtn').disabled = false;
+    };
+
+    function personDoc(p) {
+      const d = { name: p.name, title: p.title || '', dept: p.dept, empType: p.empType };
+      if (p.code) d.code = p.code;
+      if (p.bu) d.bu = p.bu;
+      if (p.subDept) d.subDept = p.subDept;
+      if (p.managerId) d.managerId = p.managerId;
+      d.kras = (p.kras || []).map(k => ({ title: k.title || '', metric: k.metric || '', target: k.target || '' }));
+      return d;
+    }
+
+    $('importBtn').onclick = async () => {
+      if (!SEED.people.length) { showErr('seed.js did not load — cannot import.'); return; }
+      if (!confirm('Import ' + SEED.people.length + ' people into the live database?')) return;
+      $('importBtn').disabled = true;
+      try {
+        for (let i = 0; i < SEED.people.length; i += 400) {
+          const batch = writeBatch(db);
+          SEED.people.slice(i, i + 400).forEach(p => batch.set(doc(db, 'people', p.id), personDoc(p)));
+          await batch.commit();
+        }
+        toast('Imported ' + SEED.people.length + ' people. The chart now reads live data.');
+        await reload();
+      } catch (e) { showErr('Import failed: ' + e.message); }
+      $('importBtn').disabled = false;
+    };
+
+    // Push bundled people that are not yet in the live database (never overwrites live edits).
+    $('syncBtn').onclick = async () => {
+      const have = new Set(people.map(p => p.id));
+      const missing = SEED.people.filter(p => !have.has(p.id));
+      if (!missing.length) return;
+      if (!confirm('Add ' + missing.length + ' new people from the latest update to the live database?\n\nExisting people and your edits stay untouched.')) return;
+      $('syncBtn').disabled = true;
+      try {
+        for (let i = 0; i < missing.length; i += 400) {
+          const batch = writeBatch(db);
+          missing.slice(i, i + 400).forEach(p => batch.set(doc(db, 'people', p.id), personDoc(p)));
+          await batch.commit();
+        }
+        toast('Added ' + missing.length + ' people.');
+        await reload();
+      } catch (e) { showErr('Sync failed: ' + e.message); }
+      $('syncBtn').disabled = false;
+    };
+
+    // Push roster changes and removals to the live database. Updates and deletions are
+    // confirmed separately, so an admin can take one without the other.
+    $('reconcileBtn').onclick = async () => {
+      const { changed, gone } = rosterDiff();
+      const preview = list => list.slice(0, 10).map(p => '• ' + p.name).join('\n') +
+        (list.length > 10 ? '\n• and ' + (list.length - 10) + ' more' : '');
+      $('reconcileBtn').disabled = true;
+      try {
+        let updated = 0, removed = 0;
+        if (changed.length && confirm('Update ' + changed.length + ' people to match the roster bundled in this page?\n\n'
+            + 'Any edits made in this panel to these people will be overwritten.\n\n' + preview(changed))) {
+          for (let i = 0; i < changed.length; i += 400) {
+            const batch = writeBatch(db);
+            changed.slice(i, i + 400).forEach(p => batch.set(doc(db, 'people', p.id), personDoc(p)));
+            await batch.commit();
+          }
+          updated = changed.length;
+        }
+        if (gone.length && confirm('Remove ' + gone.length + ' people who are no longer on the roster?\n\n'
+            + 'This cannot be undone.\n\n' + preview(gone))) {
+          for (let i = 0; i < gone.length; i += 400) {
+            const batch = writeBatch(db);
+            gone.slice(i, i + 400).forEach(p => batch.delete(doc(db, 'people', p.id)));
+            await batch.commit();
+          }
+          removed = gone.length;
+        }
+        if (updated || removed) {
+          toast('Updated ' + updated + ', removed ' + removed + '.');
+          await reload();
+        }
+      } catch (e) { showErr('Reconcile failed: ' + e.message); }
+      $('reconcileBtn').disabled = false;
+    };
+
+    // ---------- list ----------
+    $('q').oninput = render;
+    $('deptFilter').onchange = render;
+    DEPTS.forEach(d => {
+      const o = document.createElement('option');
+      o.value = d.id; o.textContent = d.name;
+      $('deptFilter').appendChild(o);
+    });
+
+    function render() {
+      const q = $('q').value.trim().toLowerCase();
+      const df = $('deptFilter').value;
+      const idx = byId();
+      const list = people.filter(p => {
+        if (df !== 'all' && p.dept !== df) return false;
+        if (!q) return true;
+        return [p.name, p.title, p.subDept, p.bu, p.code].some(v => (v || '').toLowerCase().includes(q));
+      });
+      // Also state what the page was built with. When the two disagree and no sync or
+      // reconcile button is offered, the page itself is stale — a hard reload fixes it.
+      $('count').textContent = list.length + ' of ' + people.length +
+        ' · page roster ' + SEED.people.length;
+      const rows = $('rows');
+      rows.innerHTML = '';
+      list.forEach(p => {
+        const d = deptById[p.dept];
+        const mgr = p.managerId ? idx[p.managerId] : null;
+        const tr = document.createElement('tr');
+        tr.innerHTML =
+          '<td><div class="nm"></div><div class="sub"></div></td>' +
+          '<td class="hide-m"><span class="chip"><span class="dot"></span><span class="dn"></span></span></td>' +
+          '<td class="hide-m sub mg"></td>' +
+          '<td class="hide-m"><span class="pill"></span></td>' +
+          '<td><div class="rowbtns"><button class="btn sm">Edit</button><button class="btn sm danger">Delete</button></div></td>';
+        tr.querySelector('.nm').textContent = p.name;
+        tr.querySelector('.sub').textContent = p.title || '';
+        tr.querySelector('.dot').style.background = d ? d.color : '#D4D4D4';
+        tr.querySelector('.dn').textContent = d ? d.name : p.dept;
+        tr.querySelector('.mg').textContent = mgr ? mgr.name : (p.managerId ? '(missing: ' + p.managerId + ')' : '— root —');
+        const pill = tr.querySelector('.pill');
+        pill.textContent = p.empType;
+        if (p.empType === 'Open role') pill.classList.add('open');
+        const [editB, delB] = tr.querySelectorAll('button');
+        editB.onclick = () => openEditor(p.id);
+        delB.onclick = () => removePerson(p.id);
+        rows.appendChild(tr);
+      });
+    }
+
+    // ---------- editor ----------
+    $('addBtn').onclick = () => openEditor(null);
+    $('mCancel').onclick = () => $('overlay').classList.remove('on');
+    $('overlay').onclick = e => { if (e.target === $('overlay')) $('overlay').classList.remove('on'); };
+    $('addKra').onclick = () => addKraRow({});
+
+    EMP_TYPES.forEach(t => {
+      const o = document.createElement('option');
+      o.value = t; o.textContent = t;
+      $('fType').appendChild(o);
+    });
+    DEPTS.forEach(d => {
+      const o = document.createElement('option');
+      o.value = d.id; o.textContent = d.name;
+      $('fDept').appendChild(o);
+    });
+
+    function descendantsOf(id) {
+      const kids = {};
+      people.forEach(p => { if (p.managerId) (kids[p.managerId] = kids[p.managerId] || []).push(p.id); });
+      const out = new Set();
+      const walk = x => (kids[x] || []).forEach(k => { if (!out.has(k)) { out.add(k); walk(k); } });
+      walk(id);
+      return out;
+    }
+
+    function addKraRow(k) {
+      const div = document.createElement('div');
+      div.className = 'kra';
+      div.innerHTML = '<input class="kt" placeholder="KRA title" maxlength="300">' +
+        '<input class="kg" placeholder="Weight e.g. 20%" maxlength="60">' +
+        '<button type="button" class="x" title="Remove">×</button>' +
+        '<textarea class="km" placeholder="Metric / description" maxlength="2000"></textarea>';
+      div.querySelector('.kt').value = k.title || '';
+      div.querySelector('.kg').value = k.target || '';
+      div.querySelector('.km').value = k.metric || '';
+      div.querySelector('.x').onclick = () => div.remove();
+      $('kras').appendChild(div);
+    }
+
+    function openEditor(id) {
+      editingId = id;
+      const p = id ? byId()[id] : null;
+      $('mTitle').textContent = p ? 'Edit — ' + p.name : 'Add person';
+      $('fName').value = p ? p.name : '';
+      $('fTitle').value = p ? (p.title || '') : '';
+      $('fDept').value = p ? p.dept : (DEPTS[1] ? DEPTS[1].id : DEPTS[0].id);
+      $('fType').value = p ? p.empType : 'Full-time';
+      $('fSub').value = p ? (p.subDept || '') : '';
+      $('fCode').value = p ? (p.code || '') : '';
+      $('fBu').value = p ? (p.bu || '') : 'PG Programme';
+
+      const mgrSel = $('fMgr');
+      mgrSel.innerHTML = '';
+      const isRoot = p && !p.managerId;
+      if (isRoot) {
+        const o = document.createElement('option');
+        o.value = ''; o.textContent = '— none (top of the chart) —';
+        mgrSel.appendChild(o);
+        mgrSel.disabled = true;
+      } else {
+        mgrSel.disabled = false;
+        const blocked = id ? descendantsOf(id) : new Set();
+        people.filter(x => x.id !== id && !blocked.has(x.id) && x.empType !== 'Open role')
+          .forEach(x => {
+            const o = document.createElement('option');
+            o.value = x.id; o.textContent = x.name + ' — ' + (x.title || '');
+            mgrSel.appendChild(o);
+          });
+        if (p && p.managerId) mgrSel.value = p.managerId;
+      }
+
+      $('kras').innerHTML = '';
+      (p && p.kras ? p.kras : []).forEach(addKraRow);
+      $('overlay').classList.add('on');
+      $('fName').focus();
+    }
+
+    $('mSave').onclick = async () => {
+      const name = $('fName').value.trim();
+      if (!name) { alert('Name is required.'); return; }
+      const p = {
+        name,
+        title: $('fTitle').value.trim(),
+        dept: $('fDept').value,
+        empType: $('fType').value,
+        subDept: $('fSub').value.trim(),
+        code: $('fCode').value.trim(),
+        bu: $('fBu').value.trim(),
+        managerId: $('fMgr').disabled ? '' : $('fMgr').value,
+        kras: [...$('kras').querySelectorAll('.kra')].map(div => ({
+          title: div.querySelector('.kt').value.trim(),
+          metric: div.querySelector('.km').value.trim(),
+          target: div.querySelector('.kg').value.trim()
+        })).filter(k => k.title || k.metric)
+      };
+      if (!editingId && !p.managerId) { alert('Pick a manager for the new person.'); return; }
+      const id = editingId || ('p' + Date.now().toString(36));
+      $('mSave').disabled = true;
+      try {
+        await setDoc(doc(db, 'people', id), personDoc(p));
+        $('overlay').classList.remove('on');
+        toast(editingId ? 'Saved ' + name : 'Added ' + name);
+        await reload();
+      } catch (e) { alert('Save failed: ' + e.message + '\n\nIf this says permission denied, your account is not on the admin list.'); }
+      $('mSave').disabled = false;
+    };
+
+    async function removePerson(id) {
+      const idx = byId();
+      const p = idx[id];
+      if (!p) return;
+      if (!p.managerId) { alert('This is the top of the chart — it cannot be deleted. Edit it instead.'); return; }
+      const reports = people.filter(x => x.managerId === id);
+      const mgr = idx[p.managerId];
+      let msg = 'Delete ' + p.name + '?';
+      if (reports.length) msg += '\n\n' + reports.length + ' direct report(s) will be moved under ' + (mgr ? mgr.name : 'their grand-manager') + '.';
+      if (!confirm(msg)) return;
+      try {
+        const batch = writeBatch(db);
+        reports.forEach(r => batch.set(doc(db, 'people', r.id), { ...personDoc(r), managerId: p.managerId }));
+        batch.delete(doc(db, 'people', id));
+        await batch.commit();
+        toast('Deleted ' + p.name);
+        await reload();
+      } catch (e) { showErr('Delete failed: ' + e.message); }
+    }
+
+    // ---------- misc ----------
+    function toast(msg) {
+      $('toast').textContent = msg;
+      $('toast').classList.add('on');
+      setTimeout(() => $('toast').classList.remove('on'), 3200);
+    }
+    function showErr(msg) {
+      $('appErr').textContent = msg;
+      $('appErr').classList.add('on');
+      setTimeout(() => $('appErr').classList.remove('on'), 12000);
+    }
+  </script>
+</body>
+</html>
