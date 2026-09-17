@@ -66,6 +66,52 @@
     .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #090909; color: #FFFFFF; padding: 10px 18px; border-radius: 10px; font-size: 13px; box-shadow: 0 8px 24px rgba(9,9,9,.3); opacity: 0; pointer-events: none; transition: opacity 200ms; z-index: 60; }
     .toast.on { opacity: 1; }
     .hidden { display: none !important; }
+
+    /* --- bulk selection --- */
+    .ckcol { width: 34px; }
+    td.ckcol, th.ckcol { padding-right: 0; }
+    input[type=checkbox] { width: 15px; height: 15px; accent-color: #090909; cursor: pointer; vertical-align: middle; }
+    tbody tr.sel { background: #FFFBEC; }
+    tbody tr.sel:hover { background: #FDF6DC; }
+    .bulkbar { display: none; align-items: center; gap: 10px; flex-wrap: wrap; padding: 10px 14px; margin-bottom: 14px;
+      background: #090909; color: #FFFFFF; border-radius: 12px; box-shadow: 0 2px 10px rgba(9,9,9,.18); }
+    .bulkbar.on { display: flex; }
+    .bulkbar .n { font-weight: 700; }
+    .bulkbar .btn { background: #262626; border-color: #404040; color: #FFFFFF; }
+    .bulkbar .btn:hover { background: #404040; }
+    .bulkbar .btn.danger { color: #FFB4AB; border-color: #5C1E1A; }
+    .bulkbar .btn.danger:hover { background: #5C1E1A; }
+    .bulkbar .lnk { background: transparent; border: 0; color: #A3A3A3; text-decoration: underline; font-size: 12.5px; }
+    .bulkbar .lnk:hover { color: #FFFFFF; }
+
+    /* --- bulk modals --- */
+    .modal.wide { max-width: 860px; }
+    .bfield { display: grid; grid-template-columns: 22px 150px 1fr; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid #F0F0F0; }
+    .bfield:last-child { border-bottom: 0; }
+    .bfield > label.n { font-size: 12px; font-weight: 600; color: #262626; }
+    .bfield select, .bfield input { width: 100%; height: 34px; padding: 0 10px; border-radius: 8px; border: 1px solid #D4D4D4; background: #FFFFFF; }
+    .bfield select:disabled, .bfield input:disabled { background: #F5F5F5; color: #A3A3A3; }
+    .tabs { display: flex; gap: 4px; padding: 3px; background: #F5F5F5; border-radius: 9px; margin-bottom: 16px; }
+    .tabs button { flex: 1; height: 32px; border: 0; border-radius: 7px; background: transparent; color: #525252; font-weight: 600; font-size: 12.5px; }
+    .tabs button.on { background: #FFFFFF; color: #090909; box-shadow: 0 1px 2px rgba(9,9,9,.10); }
+    .drop { border: 1.5px dashed #D4D4D4; border-radius: 12px; padding: 18px; text-align: center; color: #737373; margin-bottom: 12px; }
+    .drop.hot { border-color: #F7D344; background: #FFFBEC; }
+    textarea.csv { width: 100%; min-height: 150px; padding: 10px 12px; border-radius: 10px; border: 1px solid #D4D4D4;
+      font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; line-height: 1.5; resize: vertical; white-space: pre; }
+    .spec { background: #FAFAFA; border: 1px solid #E5E5E5; border-radius: 10px; padding: 10px 12px; font-size: 12px; color: #525252; margin-bottom: 12px; }
+    .spec code { font-family: ui-monospace, Menlo, Consolas, monospace; background: #FFFFFF; border: 1px solid #E5E5E5;
+      border-radius: 5px; padding: 1px 5px; font-size: 11.5px; color: #262626; }
+    .tally { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .tally span { font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; background: #F5F5F5; color: #525252; }
+    .tally .add { background: #E7F6EC; color: #16643B; }
+    .tally .upd { background: #FDF3D7; color: #6b5500; }
+    .tally .del { background: #FBEDEC; color: #8C1D18; }
+    .tally .bad { background: #FBEDEC; color: #8C1D18; }
+    .prev { max-height: 260px; overflow: auto; border: 1px solid #E5E5E5; border-radius: 10px; }
+    .prev table { border: 0; border-radius: 0; box-shadow: none; }
+    .prev th, .prev td { font-size: 12px; padding: 6px 10px; white-space: nowrap; }
+    .prev td.bad { color: #8C1D18; white-space: normal; }
+
     @media (max-width: 720px) {
       .grid { grid-template-columns: 1fr; }
       .hide-m { display: none; }
@@ -108,12 +154,25 @@
       <button class="btn yellow hidden" id="syncBtn"></button>
       <button class="btn hidden" id="reconcileBtn"></button>
       <button class="btn hidden" id="fixBtn"></button>
+      <button class="btn" id="exportBtn">Export CSV</button>
+      <button class="btn" id="uploadBtn">Bulk upload</button>
       <button class="btn dark" id="addBtn">+ Add person</button>
+    </div>
+
+    <div class="bulkbar" id="bulkbar">
+      <span class="n" id="bulkN">0 selected</span>
+      <button class="btn sm lnk" id="bulkAllMatching">Select all matching the filter</button>
+      <button class="btn sm lnk" id="bulkClear">Clear</button>
+      <span style="flex:1"></span>
+      <button class="btn sm" id="bulkEditBtn">Bulk edit</button>
+      <button class="btn sm" id="bulkExportBtn">Export selected</button>
+      <button class="btn sm danger" id="bulkDeleteBtn">Delete selected</button>
     </div>
 
     <table>
       <thead>
         <tr>
+          <th class="ckcol"><input type="checkbox" id="ckAll" title="Select all shown"></th>
           <th>Person</th>
           <th class="hide-m">Department</th>
           <th class="hide-m">Manager</th>
@@ -151,6 +210,87 @@
     </div>
   </div>
 
+  <!-- bulk edit modal -->
+  <div class="overlay" id="bulkOverlay">
+    <div class="modal">
+      <h2 id="bTitle">Bulk edit</h2>
+      <p class="sub" style="margin: -10px 0 14px;">Tick a field to change it. Unticked fields are left exactly as they are on every person.</p>
+      <div id="bFields">
+        <div class="bfield">
+          <input type="checkbox" data-f="dept"><label class="n">Department</label>
+          <select id="bDept" disabled></select>
+        </div>
+        <div class="bfield">
+          <input type="checkbox" data-f="empType"><label class="n">Employment type</label>
+          <select id="bType" disabled></select>
+        </div>
+        <div class="bfield">
+          <input type="checkbox" data-f="bu"><label class="n">Business unit</label>
+          <input id="bBu" maxlength="120" disabled placeholder="e.g. Central Functions">
+        </div>
+        <div class="bfield">
+          <input type="checkbox" data-f="subDept"><label class="n">Sub-department</label>
+          <input id="bSub" maxlength="120" disabled placeholder="leave empty to clear it">
+        </div>
+        <div class="bfield">
+          <input type="checkbox" data-f="managerId"><label class="n">Manager</label>
+          <select id="bMgr" disabled></select>
+        </div>
+        <div class="bfield">
+          <input type="checkbox" data-f="kras"><label class="n">Goals / KRAs</label>
+          <select id="bKras" disabled>
+            <option value="clear">Remove all goals</option>
+          </select>
+        </div>
+      </div>
+      <div class="err" id="bErr" style="margin: 16px 0 0;"></div>
+      <div class="mfoot">
+        <button class="btn" id="bCancel">Cancel</button>
+        <button class="btn dark" id="bApply">Apply to selected</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- bulk upload modal -->
+  <div class="overlay" id="upOverlay">
+    <div class="modal wide">
+      <h2>Bulk upload</h2>
+      <div class="tabs">
+        <button id="tabPeople" class="on">Employee details</button>
+        <button id="tabGoals">Goals / KRAs</button>
+      </div>
+
+      <div class="spec" id="upSpec"></div>
+
+      <div class="drop" id="upDrop">
+        Drop a <strong>.csv</strong> file here, or
+        <label style="text-decoration: underline; cursor: pointer;">choose a file<input type="file" id="upFile" accept=".csv,text/csv" class="hidden"></label>
+        · or paste below
+      </div>
+      <textarea class="csv" id="upText" spellcheck="false" placeholder="Paste CSV here — the first row must be the header"></textarea>
+
+      <div style="display: flex; align-items: center; gap: 10px; margin: 12px 0;">
+        <button class="btn" id="upPreview">Check</button>
+        <button class="btn sm lnk" id="upTemplate" style="background: transparent; border: 0; color: #525252; text-decoration: underline;">Download a template</button>
+        <span style="flex:1"></span>
+        <label style="font-size: 12.5px; color: #525252; display: flex; align-items: center; gap: 6px;">
+          <input type="checkbox" id="upDelete"> Delete rows not in the file
+        </label>
+      </div>
+
+      <div id="upResult" class="hidden">
+        <div class="tally" id="upTally"></div>
+        <div class="prev" id="upPrev"></div>
+      </div>
+
+      <div class="err" id="upErr" style="margin: 16px 0 0;"></div>
+      <div class="mfoot">
+        <button class="btn" id="upCancel">Cancel</button>
+        <button class="btn dark" id="upApply" disabled>Apply</button>
+      </div>
+    </div>
+  </div>
+
   <div class="toast" id="toast"></div>
 
   <script src="/seed.js"></script>
@@ -160,12 +300,12 @@
     import { getFirestore, collection, getDocs, doc, setDoc, deleteDoc, writeBatch } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js';
 
     const firebaseConfig = {
-      apiKey: "AIzaSyDrfW3Lyuz5nKGlrokYSBAI_4FLPofzjPU",
-      authDomain: "pgp-mu-org-char.firebaseapp.com",
-      projectId: "pgp-mu-org-char",
-      storageBucket: "pgp-mu-org-char.firebasestorage.app",
-      messagingSenderId: "717653481938",
-      appId: "1:717653481938:web:b405d7a659e6e7dbef100b"
+      apiKey: "AIzaSyDbyEduHjuKvWPzbwEySEcUAjxTcHhz_B0",
+      authDomain: "mu-org-chart.firebaseapp.com",
+      projectId: "mu-org-chart",
+      storageBucket: "mu-org-chart.firebasestorage.app",
+      messagingSenderId: "383526925713",
+      appId: "1:383526925713:web:dad15d12914ca01a915630"
     };
     // Mirrors the list in firestore.rules — the rules are what actually enforce access.
     const ADMIN_EMAILS = ['salil.narkar1@mastersunion.org', 'priyansh.gupta@mastersunion.org', 'rachit.jain@mastersunion.org', 'chetan@mu.org', 'mahima.mahur@mu.org'];
@@ -181,6 +321,9 @@
     const $ = id => document.getElementById(id);
     let people = [];           // live list from Firestore (or empty before import)
     let editingId = null;      // doc id being edited, null = new person
+    let shown = [];            // rows currently rendered, in order (for shift-select)
+    let lastCk = null;         // anchor for shift-select
+    const selected = new Set();
     const byId = () => Object.fromEntries(people.map(p => [p.id, p]));
 
     // ---------- auth ----------
@@ -221,9 +364,28 @@
 
     // ---------- data ----------
     async function reload() {
-      const snap = await getDocs(collection(db, 'people'));
+      let snap;
+      try {
+        snap = await getDocs(collection(db, 'people'));
+      } catch (e) {
+        // Without this the read throws unhandled and the panel just sits there
+        // blank, which looks like a broken page rather than a project that has
+        // no Firestore database yet.
+        const why = /not been used|disabled|SERVICE_DISABLED/i.test(e.message)
+          ? 'Cloud Firestore is not enabled for this project yet — switch it on in the Firebase console and create the (default) database.'
+          : (e.code === 'permission-denied'
+            ? 'The database refused the read. Check firestore.rules is deployed.'
+            : e.message);
+        showErr('Could not load the live roster. ' + why + ' The chart itself is unaffected — it falls back to the roster bundled in the page.');
+        people = [];
+        render();
+        return;
+      }
       people = snap.docs.map(d => ({ id: d.id, ...d.data() }));
       people.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+      // drop anyone who no longer exists, so a stale tick cannot be acted on
+      const alive = new Set(people.map(p => p.id));
+      [...selected].forEach(id => { if (!alive.has(id)) selected.delete(id); });
       $('seedNote').classList.toggle('hidden', people.length > 0);
       const have = new Set(people.map(p => p.id));
       const missing = SEED.people.filter(p => !have.has(p.id));
@@ -288,13 +450,19 @@
       $('fixBtn').disabled = false;
     };
 
+    // Goal text is stored with LF line breaks only. A <textarea> rewrites CRLF to
+    // LF by spec, so anything pasted or uploaded arrives normalised anyway —
+    // normalising on write too is what keeps an export/import round trip a no-op
+    // instead of silently rewriting the 96 records whose metrics carry CRLF.
+    const txt = v => String(v == null ? '' : v).replace(/\r\n?/g, '\n');
+
     function personDoc(p) {
       const d = { name: p.name, title: p.title || '', dept: p.dept, empType: p.empType };
       if (p.code) d.code = p.code;
       if (p.bu) d.bu = p.bu;
       if (p.subDept) d.subDept = p.subDept;
       if (p.managerId) d.managerId = p.managerId;
-      d.kras = (p.kras || []).map(k => ({ title: k.title || '', metric: k.metric || '', target: k.target || '' }));
+      d.kras = (p.kras || []).map(k => ({ title: txt(k.title), metric: txt(k.metric), target: txt(k.target) }));
       return d;
     }
 
@@ -390,6 +558,7 @@
       // reconcile button is offered, the page itself is stale — a hard reload fixes it.
       $('count').textContent = list.length + ' of ' + people.length +
         ' · page roster ' + SEED.people.length;
+      shown = list;
       const rows = $('rows');
       rows.innerHTML = '';
       list.forEach(p => {
@@ -397,6 +566,7 @@
         const mgr = p.managerId ? idx[p.managerId] : null;
         const tr = document.createElement('tr');
         tr.innerHTML =
+          '<td class="ckcol"><input type="checkbox" class="ck"></td>' +
           '<td><div class="nm"></div><div class="sub"></div></td>' +
           '<td class="hide-m"><span class="chip"><span class="dot"></span><span class="dn"></span></span></td>' +
           '<td class="hide-m sub mg"></td>' +
@@ -413,9 +583,47 @@
         const [editB, delB] = tr.querySelectorAll('button');
         editB.onclick = () => openEditor(p.id);
         delB.onclick = () => removePerson(p.id);
+        const ck = tr.querySelector('.ck');
+        ck.checked = selected.has(p.id);
+        tr.classList.toggle('sel', ck.checked);
+        ck.onclick = e => {
+          // shift-click extends the run from the last box you touched
+          if (e.shiftKey && lastCk) {
+            const a = shown.findIndex(x => x.id === lastCk), b = shown.findIndex(x => x.id === p.id);
+            if (a > -1 && b > -1) {
+              shown.slice(Math.min(a, b), Math.max(a, b) + 1)
+                .forEach(x => ck.checked ? selected.add(x.id) : selected.delete(x.id));
+            }
+          } else {
+            ck.checked ? selected.add(p.id) : selected.delete(p.id);
+          }
+          lastCk = p.id;
+          render();
+        };
         rows.appendChild(tr);
       });
+      syncBulkBar();
     }
+
+    // ---------- selection ----------
+    function syncBulkBar() {
+      // selections survive filtering, so say plainly when some are off-screen
+      const onScreen = shown.filter(p => selected.has(p.id)).length;
+      const n = selected.size;
+      $('bulkbar').classList.toggle('on', n > 0);
+      $('bulkN').textContent = n + ' selected' + (n > onScreen ? ' (' + (n - onScreen) + ' hidden by the filter)' : '');
+      const all = $('ckAll');
+      all.checked = shown.length > 0 && onScreen === shown.length;
+      all.indeterminate = onScreen > 0 && onScreen < shown.length;
+    }
+    $('ckAll').onclick = () => {
+      const on = $('ckAll').checked;
+      shown.forEach(p => on ? selected.add(p.id) : selected.delete(p.id));
+      render();
+    };
+    $('bulkClear').onclick = () => { selected.clear(); lastCk = null; render(); };
+    $('bulkAllMatching').onclick = () => { shown.forEach(p => selected.add(p.id)); render(); };
+    const selectedPeople = () => people.filter(p => selected.has(p.id));
 
     // ---------- editor ----------
     $('addBtn').onclick = () => openEditor(null);
@@ -544,6 +752,449 @@
         await reload();
       } catch (e) { showErr('Delete failed: ' + e.message); }
     }
+
+    // ---------- shared write helper ----------
+    // Firestore caps a batch at 500 writes; the roster is ~1000 people, so every
+    // bulk path goes through here rather than hand-rolling its own chunking.
+    async function commitAll(writes) {
+      for (let i = 0; i < writes.length; i += 400) {
+        const batch = writeBatch(db);
+        writes.slice(i, i + 400).forEach(w => {
+          if (w.del) batch.delete(doc(db, 'people', w.id));
+          else batch.set(doc(db, 'people', w.id), w.data);
+        });
+        await batch.commit();
+      }
+    }
+
+    // ---------- bulk edit ----------
+    [...$('bFields').querySelectorAll('input[data-f]')].forEach(ck => {
+      ck.onchange = () => {
+        const ctl = ck.closest('.bfield').querySelector('select, input:not([type=checkbox])');
+        if (ctl) ctl.disabled = !ck.checked;
+      };
+    });
+    $('bCancel').onclick = () => $('bulkOverlay').classList.remove('on');
+    $('bulkOverlay').onclick = e => { if (e.target === $('bulkOverlay')) $('bulkOverlay').classList.remove('on'); };
+
+    $('bulkEditBtn').onclick = () => {
+      const sel = selectedPeople();
+      if (!sel.length) return;
+      $('bTitle').textContent = 'Bulk edit — ' + sel.length + ' ' + (sel.length === 1 ? 'person' : 'people');
+      $('bErr').classList.remove('on');
+      [...$('bFields').querySelectorAll('input[data-f]')].forEach(ck => {
+        ck.checked = false;
+        const ctl = ck.closest('.bfield').querySelector('select, input:not([type=checkbox])');
+        if (ctl) ctl.disabled = true;
+      });
+      fillSelect($('bDept'), DEPTS.map(d => ({ v: d.id, t: d.name })));
+      fillSelect($('bType'), EMP_TYPES.map(t => ({ v: t, t })));
+      $('bBu').value = ''; $('bSub').value = '';
+      // a new manager may not be one of the selected people, nor anyone beneath
+      // them — either would cut the branch off from the root or loop it
+      const blocked = new Set(selected);
+      sel.forEach(p => descendantsOf(p.id).forEach(x => blocked.add(x)));
+      fillSelect($('bMgr'), people.filter(x => !blocked.has(x.id) && x.empType !== 'Open role')
+        .map(x => ({ v: x.id, t: x.name + ' — ' + (x.title || '') })));
+      $('bulkOverlay').classList.add('on');
+    };
+
+    function fillSelect(el, opts) {
+      el.innerHTML = '';
+      opts.forEach(o => {
+        const op = document.createElement('option');
+        op.value = o.v; op.textContent = o.t;
+        el.appendChild(op);
+      });
+    }
+
+    $('bApply').onclick = async () => {
+      const sel = selectedPeople();
+      const on = f => $('bFields').querySelector('input[data-f="' + f + '"]').checked;
+      const patch = {};
+      if (on('dept')) patch.dept = $('bDept').value;
+      if (on('empType')) patch.empType = $('bType').value;
+      if (on('bu')) patch.bu = $('bBu').value.trim();
+      if (on('subDept')) patch.subDept = $('bSub').value.trim();
+      if (on('managerId')) patch.managerId = $('bMgr').value;
+      const clearGoals = on('kras');
+      if (!Object.keys(patch).length && !clearGoals) { bErr('Tick at least one field to change.'); return; }
+
+      const roots = sel.filter(p => !p.managerId);
+      if ('managerId' in patch && roots.length) { bErr('The top of the chart cannot be given a manager. Unselect ' + roots[0].name + '.'); return; }
+      if (!('managerId' in patch) || $('bMgr').value) { /* ok */ } else { bErr('Pick a manager.'); return; }
+
+      if (!confirm('Apply ' + (Object.keys(patch).length + (clearGoals ? 1 : 0)) + ' change(s) to ' + sel.length + ' people?')) return;
+      $('bApply').disabled = true;
+      try {
+        await commitAll(sel.map(p => {
+          const next = { ...p, ...patch };
+          if (clearGoals) next.kras = [];
+          return { id: p.id, data: personDoc(next) };
+        }));
+        $('bulkOverlay').classList.remove('on');
+        toast('Updated ' + sel.length + ' people.');
+        await reload();
+      } catch (e) { bErr('Bulk edit failed: ' + e.message); }
+      $('bApply').disabled = false;
+    };
+    function bErr(m) { $('bErr').textContent = m; $('bErr').classList.add('on'); }
+
+    // ---------- bulk delete ----------
+    $('bulkDeleteBtn').onclick = async () => {
+      const sel = selectedPeople();
+      if (!sel.length) return;
+      const doomed = new Set(sel.map(p => p.id));
+      const idx = byId();
+      if (sel.some(p => !p.managerId)) { showErr('The top of the chart cannot be deleted. Unselect it and try again.'); return; }
+
+      // survivors reporting into a deleted person move up to the nearest manager
+      // who is NOT also being deleted, so no branch is orphaned
+      const surviving = m => { while (m && doomed.has(m)) m = idx[m] ? idx[m].managerId : ''; return m || ''; };
+      const moved = people.filter(p => !doomed.has(p.id) && p.managerId && doomed.has(p.managerId));
+
+      let msg = 'Delete ' + sel.length + ' people?\n\n' +
+        sel.slice(0, 12).map(p => '• ' + p.name).join('\n') +
+        (sel.length > 12 ? '\n• and ' + (sel.length - 12) + ' more' : '');
+      if (moved.length) msg += '\n\n' + moved.length + ' person(s) reporting into them will move up to the nearest remaining manager.';
+      msg += '\n\nThis cannot be undone.';
+      if (!confirm(msg)) return;
+
+      $('bulkDeleteBtn').disabled = true;
+      try {
+        await commitAll([
+          ...moved.map(p => ({ id: p.id, data: personDoc({ ...p, managerId: surviving(p.managerId) }) })),
+          ...sel.map(p => ({ id: p.id, del: true }))
+        ]);
+        toast('Deleted ' + sel.length + (moved.length ? ', moved ' + moved.length : '') + '.');
+        selected.clear();
+        await reload();
+      } catch (e) { showErr('Bulk delete failed: ' + e.message); }
+      $('bulkDeleteBtn').disabled = false;
+    };
+
+    // ---------- CSV ----------
+    function csvParse(text) {
+      const s = text.replace(/^﻿/, '');
+      const rows = []; let row = [], cell = '', q = false;
+      for (let i = 0; i < s.length; i++) {
+        const c = s[i];
+        if (q) {
+          if (c === '"') { if (s[i + 1] === '"') { cell += '"'; i++; } else q = false; }
+          // a line break INSIDE quotes is content, not a row break: 96 goal
+          // metrics carry CRLF, and normalising them rewrote every one on import
+          else cell += c;
+        } else if (c === '"') q = true;
+        else if (c === ',') { row.push(cell); cell = ''; }
+        else if (c === '\n' || c === '\r') {
+          if (c === '\r' && s[i + 1] === '\n') i++;
+          row.push(cell); rows.push(row); row = []; cell = '';
+        }
+        else cell += c;
+      }
+      if (cell !== '' || row.length) { row.push(cell); rows.push(row); }
+      return rows.filter(r => r.some(v => v.trim() !== ''));
+    }
+    const csvCell = v => {
+      const s = v == null ? '' : String(v);
+      return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+    };
+    const csvBuild = rows => rows.map(r => r.map(csvCell).join(',')).join('\r\n');
+    function download(name, text) {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob(['﻿' + text], { type: 'text/csv;charset=utf-8' }));
+      a.download = name;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+    }
+
+    const PEOPLE_COLS = ['id', 'code', 'name', 'title', 'dept', 'bu', 'subDept', 'managerId', 'empType'];
+    const GOAL_COLS = ['personId', 'personName', 'title', 'target', 'metric'];
+
+    function peopleCsv(list) {
+      return csvBuild([PEOPLE_COLS, ...list.map(p => PEOPLE_COLS.map(c => p[c] || ''))]);
+    }
+    function goalsCsv(list) {
+      const rows = [GOAL_COLS];
+      list.forEach(p => (p.kras || []).forEach(k => rows.push([p.id, p.name, k.title || '', k.target || '', k.metric || ''])));
+      return csvBuild(rows);
+    }
+    const stamp = () => new Date().toISOString().slice(0, 10);
+    $('exportBtn').onclick = () => download('org-people-' + stamp() + '.csv', peopleCsv(shown));
+    $('bulkExportBtn').onclick = () => {
+      const sel = selectedPeople();
+      download('org-people-selected-' + stamp() + '.csv', peopleCsv(sel));
+      if (sel.some(p => (p.kras || []).length)) download('org-goals-selected-' + stamp() + '.csv', goalsCsv(sel));
+    };
+
+    // ---------- bulk upload ----------
+    let upMode = 'people', upPlan = null;
+    const SPEC = {
+      people: 'One row per person. Header required. Columns: <code>' + PEOPLE_COLS.join('</code> <code>') + '</code><br>' +
+        '<strong>id</strong> blank means a new person. <strong>dept</strong> accepts the id or the name. ' +
+        '<strong>managerId</strong> accepts an id, an employee code, or an exact name. ' +
+        'Goals are never touched by this tab — use the Goals tab for those.',
+      goals: 'One row per goal; a person with three goals gets three rows. Header required. Columns: <code>' + GOAL_COLS.join('</code> <code>') + '</code><br>' +
+        '<strong>personId</strong> accepts an id, an employee code, or an exact name. <strong>personName</strong> is ignored — it is there so the file reads. ' +
+        'Every goal a person has is replaced by their rows in the file. People absent from the file keep their goals.'
+    };
+    function setUpMode(m) {
+      upMode = m; upPlan = null;
+      $('tabPeople').classList.toggle('on', m === 'people');
+      $('tabGoals').classList.toggle('on', m === 'goals');
+      $('upSpec').innerHTML = SPEC[m];
+      $('upResult').classList.add('hidden');
+      $('upErr').classList.remove('on');
+      $('upApply').disabled = true;
+      $('upDelete').disabled = m !== 'people';
+      $('upDelete').checked = false;
+      $('upDelete').parentElement.style.opacity = m === 'people' ? '1' : '.4';
+    }
+    $('tabPeople').onclick = () => setUpMode('people');
+    $('tabGoals').onclick = () => setUpMode('goals');
+    $('uploadBtn').onclick = () => { setUpMode('people'); $('upText').value = ''; $('upOverlay').classList.add('on'); };
+    $('upCancel').onclick = () => $('upOverlay').classList.remove('on');
+    $('upOverlay').onclick = e => { if (e.target === $('upOverlay')) $('upOverlay').classList.remove('on'); };
+    $('upTemplate').onclick = () => {
+      if (upMode === 'people') download('template-people.csv', peopleCsv(shown.length ? shown : people));
+      else download('template-goals.csv', goalsCsv(people));
+    };
+    $('upFile').onchange = e => { const f = e.target.files[0]; if (f) f.text().then(t => { $('upText').value = t; $('upPreview').click(); }); };
+    ['dragover', 'dragenter'].forEach(ev => $('upDrop').addEventListener(ev, e => { e.preventDefault(); $('upDrop').classList.add('hot'); }));
+    ['dragleave', 'drop'].forEach(ev => $('upDrop').addEventListener(ev, e => { e.preventDefault(); $('upDrop').classList.remove('hot'); }));
+    $('upDrop').addEventListener('drop', e => {
+      const f = e.dataTransfer.files[0];
+      if (f) f.text().then(t => { $('upText').value = t; $('upPreview').click(); });
+    });
+
+    const norm = s => String(s == null ? '' : s).trim();
+    const fold = s => norm(s).toLowerCase();
+
+    // id, then employee code, then exact name. An ambiguous token is reported
+    // rather than silently resolved — several people share the placeholder code
+    // "—", and quietly reparenting someone under the wrong manager is worse
+    // than refusing the row.
+    function resolvePerson(token, live) {
+      const t = fold(token);
+      if (!t) return null;
+      for (const key of ['id', 'code', 'name']) {
+        const hits = live.filter(p => p[key] && fold(p[key]) === t);
+        if (hits.length === 1) return hits[0];
+        if (hits.length > 1) return { ambiguous: key, n: hits.length };
+      }
+      return null;
+    }
+    const ambigMsg = (r, token) => '"' + token + '" matches ' + r.n + ' people by ' +
+      (r.ambiguous === 'code' ? 'employee code' : r.ambiguous) + ' — use the id instead';
+    function resolveDept(token) {
+      const t = fold(token);
+      if (!t) return null;
+      return DEPTS.find(d => fold(d.id) === t) || DEPTS.find(d => fold(d.name) === t)
+        || DEPTS.find(d => d.short && fold(d.short) === t) || null;
+    }
+
+    $('upPreview').onclick = () => {
+      $('upErr').classList.remove('on');
+      $('upApply').disabled = true;
+      upPlan = null;
+      const rows = csvParse($('upText').value);
+      if (rows.length < 2) { upErr('Nothing to read — the file needs a header row and at least one data row.'); return; }
+      const header = rows[0].map(h => fold(h).replace(/[\s_-]/g, ''));
+      const recs = rows.slice(1).map(r => {
+        const o = {};
+        header.forEach((h, i) => { o[h] = norm(r[i]); });
+        return o;
+      });
+      try {
+        upPlan = upMode === 'people' ? planPeople(header, recs) : planGoals(header, recs);
+      } catch (e) { upErr(e.message); return; }
+      renderPlan(upPlan);
+      $('upApply').disabled = upPlan.writes.length === 0;
+    };
+    function upErr(m) { $('upErr').textContent = m; $('upErr').classList.add('on'); $('upResult').classList.add('hidden'); }
+
+    function planPeople(header, recs) {
+      for (const need of ['name', 'dept', 'emptype']) {
+        if (!header.includes(need)) throw new Error('Missing required column "' + need + '". Found: ' + header.join(', '));
+      }
+      const live = people.slice();
+      const errs = [], creates = [], updates = [];
+      const seen = new Set();
+      // staged copy so a manager named earlier in the same file can be resolved
+      const staged = live.map(p => ({ ...p }));
+
+      recs.forEach((r, i) => {
+        const line = i + 2;
+        const existing = r.id ? staged.find(p => fold(p.id) === fold(r.id))
+          : (r.code ? staged.find(p => p.code && fold(p.code) === fold(r.code)) : null);
+        const name = r.name;
+        if (!name) { errs.push({ line, msg: 'name is empty' }); return; }
+        const d = resolveDept(r.dept);
+        if (!d) { errs.push({ line, msg: 'unknown department "' + r.dept + '"' }); return; }
+        const type = EMP_TYPES.find(t => fold(t) === fold(r.emptype));
+        if (!type) { errs.push({ line, msg: 'unknown employment type "' + r.emptype + '" (use ' + EMP_TYPES.join(' / ') + ')' }); return; }
+
+        const id = existing ? existing.id : (r.id || 'p' + Date.now().toString(36) + i.toString(36));
+        if (seen.has(id)) { errs.push({ line, msg: 'the same person appears twice in this file' }); return; }
+        seen.add(id);
+
+        let mgrId = '';
+        const isRoot = existing && !existing.managerId;
+        if (!isRoot) {
+          const mgr = resolvePerson(r.managerid, staged);
+          if (mgr && mgr.ambiguous) { errs.push({ line, msg: 'manager ' + ambigMsg(mgr, r.managerid) }); return; }
+          if (!mgr && norm(r.managerid)) { errs.push({ line, msg: 'manager "' + r.managerid + '" not found' }); return; }
+          if (!mgr) { errs.push({ line, msg: 'manager is required' }); return; }
+          if (mgr.id === id) { errs.push({ line, msg: 'cannot report to themselves' }); return; }
+          mgrId = mgr.id;
+        }
+
+        const next = {
+          id, name, title: r.title || '', dept: d.id, bu: r.bu || '', subDept: r.subdept || '',
+          code: r.code || '', managerId: mgrId, empType: type,
+          kras: existing ? (existing.kras || []) : []   // this tab never touches goals
+        };
+        const at = staged.findIndex(p => p.id === id);
+        if (at > -1) staged[at] = next; else staged.push(next);
+        (existing ? updates : creates).push(next);
+      });
+
+      const cyc = findCycle(staged);
+      if (cyc) errs.push({ line: '—', msg: 'these rows form a reporting loop: ' + cyc.join(' → ') });
+
+      const inFile = new Set([...creates, ...updates].map(p => p.id));
+      const deletes = $('upDelete').checked ? people.filter(p => !inFile.has(p.id) && p.managerId) : [];
+
+      const changedUpdates = updates.filter(p => {
+        const cur = people.find(x => x.id === p.id);
+        return !cur || JSON.stringify(personDoc(cur)) !== JSON.stringify(personDoc(p));
+      });
+      return {
+        kind: 'people', errs, creates, updates: changedUpdates,
+        unchanged: updates.length - changedUpdates.length, deletes,
+        writes: errs.length ? [] : [
+          ...creates.map(p => ({ id: p.id, data: personDoc(p) })),
+          ...changedUpdates.map(p => ({ id: p.id, data: personDoc(p) })),
+          ...deletes.map(p => ({ id: p.id, del: true }))
+        ]
+      };
+    }
+
+    function findCycle(list) {
+      const by = Object.fromEntries(list.map(p => [p.id, p]));
+      for (const p of list) {
+        const seen = new Set([p.id]);
+        let cur = p.managerId, path = [p.name];
+        while (cur) {
+          if (seen.has(cur)) return path.concat(by[cur] ? by[cur].name : cur);
+          seen.add(cur);
+          path.push(by[cur] ? by[cur].name : cur);
+          if (!by[cur]) break;
+          cur = by[cur].managerId;
+        }
+      }
+      return null;
+    }
+
+    function planGoals(header, recs) {
+      if (!header.includes('personid')) throw new Error('Missing required column "personId". Found: ' + header.join(', '));
+      const errs = [];
+      const grouped = new Map();
+      recs.forEach((r, i) => {
+        const line = i + 2;
+        const p = resolvePerson(r.personid, people);
+        if (p && p.ambiguous) { errs.push({ line, msg: ambigMsg(p, r.personid) }); return; }
+        if (!p) { errs.push({ line, msg: 'person "' + r.personid + '" not found' }); return; }
+        if (!r.title && !r.metric) { errs.push({ line, msg: 'a goal needs a title or a metric' }); return; }
+        if (!grouped.has(p.id)) grouped.set(p.id, []);
+        grouped.get(p.id).push({ title: r.title || '', metric: r.metric || '', target: r.target || '' });
+      });
+      const touched = [], unchanged = [];
+      grouped.forEach((kras, id) => {
+        const p = people.find(x => x.id === id);
+        const next = { ...p, kras };
+        (JSON.stringify(personDoc(p)) === JSON.stringify(personDoc(next)) ? unchanged : touched).push(next);
+      });
+      return {
+        kind: 'goals', errs, creates: [], updates: touched, unchanged: unchanged.length, deletes: [],
+        goalCount: recs.length - errs.length,
+        writes: errs.length ? [] : touched.map(p => ({ id: p.id, data: personDoc(p) }))
+      };
+    }
+
+    function renderPlan(plan) {
+      $('upResult').classList.remove('hidden');
+      const t = $('upTally');
+      t.innerHTML = '';
+      const chip = (cls, txt) => { const s = document.createElement('span'); s.className = cls; s.textContent = txt; t.appendChild(s); };
+      if (plan.kind === 'people') {
+        chip('add', plan.creates.length + ' to add');
+        chip('upd', plan.updates.length + ' to update');
+        chip('', plan.unchanged + ' unchanged');
+        if (plan.deletes.length) chip('del', plan.deletes.length + ' to delete');
+      } else {
+        chip('upd', plan.updates.length + ' people to update');
+        chip('', plan.goalCount + ' goals in file');
+        chip('', plan.unchanged + ' unchanged');
+      }
+      if (plan.errs.length) chip('bad', plan.errs.length + ' problem' + (plan.errs.length === 1 ? '' : 's'));
+
+      const prev = $('upPrev');
+      prev.innerHTML = '';
+      const tbl = document.createElement('table');
+      if (plan.errs.length) {
+        // nothing is written while a single row is broken, so lead with the problems
+        tbl.innerHTML = '<thead><tr><th>Row</th><th>Problem</th></tr></thead><tbody></tbody>';
+        const tb = tbl.querySelector('tbody');
+        plan.errs.slice(0, 200).forEach(e => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = '<td></td><td class="bad"></td>';
+          tr.children[0].textContent = e.line;
+          tr.children[1].textContent = e.msg;
+          tb.appendChild(tr);
+        });
+      } else {
+        tbl.innerHTML = '<thead><tr><th>Change</th><th>Person</th><th>Detail</th></tr></thead><tbody></tbody>';
+        const tb = tbl.querySelector('tbody');
+        const add = (what, p, detail) => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = '<td></td><td></td><td></td>';
+          tr.children[0].textContent = what;
+          tr.children[1].textContent = p.name;
+          tr.children[2].textContent = detail;
+          tb.appendChild(tr);
+        };
+        plan.creates.slice(0, 100).forEach(p => add('Add', p, (p.title || '') + ' · ' + (deptById[p.dept] ? deptById[p.dept].name : p.dept)));
+        plan.updates.slice(0, 100).forEach(p => add('Update', p, plan.kind === 'goals'
+          ? (p.kras || []).length + ' goal(s)'
+          : (p.title || '') + ' · ' + (deptById[p.dept] ? deptById[p.dept].name : p.dept)));
+        plan.deletes.slice(0, 100).forEach(p => add('Delete', p, 'not present in the file'));
+        if (!tb.children.length) {
+          const tr = document.createElement('tr');
+          tr.innerHTML = '<td colspan="3">Nothing to change — the file matches the live data.</td>';
+          tb.appendChild(tr);
+        }
+      }
+      prev.appendChild(tbl);
+    }
+
+    $('upApply').onclick = async () => {
+      if (!upPlan || !upPlan.writes.length) return;
+      const p = upPlan;
+      let msg = p.kind === 'people'
+        ? 'Add ' + p.creates.length + ', update ' + p.updates.length + (p.deletes.length ? ', DELETE ' + p.deletes.length : '') + '?'
+        : 'Replace the goals of ' + p.updates.length + ' people?';
+      if (p.deletes.length) msg += '\n\nDeletions cannot be undone.';
+      if (!confirm(msg)) return;
+      $('upApply').disabled = true;
+      try {
+        await commitAll(p.writes);
+        $('upOverlay').classList.remove('on');
+        toast('Applied ' + p.writes.length + ' change(s).');
+        await reload();
+      } catch (e) { upErr('Upload failed: ' + e.message); }
+      $('upApply').disabled = false;
+    };
 
     // ---------- misc ----------
     function toast(msg) {

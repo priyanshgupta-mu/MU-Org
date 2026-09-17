@@ -1,0 +1,20 @@
+personId,personName,title,target,metric
+demo-02,Aarav Mehta,Grow the demo cohort intake,40%,"Take the incoming cohort from 180 to 240 students without loosening the admissions bar. Measured on enrolled, fee-paid students at the census date."
+demo-02,Aarav Mehta,Hold placement conversion above 92%,35%,"Conversion is offers accepted divided by students eligible, measured four weeks after the final placement week."
+demo-02,Aarav Mehta,Close the two open leadership seats,25%,Both the Placement Manager and the Admission Counsellor roles filled and onboarded before the quarter closes.
+demo-03,Priya Raghunathan,Applications up 30% year on year,30%,"Counted on completed applications, not enquiries. Duplicate and test submissions are excluded."
+demo-03,Priya Raghunathan,Cut time-to-decision to 5 working days,30%,"Median working days from ""application complete"" to decision released. Tracked weekly, reported monthly."
+demo-03,Priya Raghunathan,Counsellor quality score above 4.5,40%,"Post-call survey, five-point scale, minimum 200 responses for the score to count."
+demo-04,Kabir Anand,Sign 25 new recruiters,50%,"1. Build the target list from the sector map
+2. Run the outreach sequence
+3. Convert 25 to a signed MoU
+Only recruiters who have not hired from us before count toward the 25."
+demo-04,Kabir Anand,Median package up 12%,50%,"Median, not mean, so a handful of outliers cannot carry the number."
+demo-05,Ishita Rao,Own the North region funnel,60%,"Full ownership from first enquiry to enrolment for the North region, including counsellor allocation."
+demo-05,Ishita Rao,Weekly funnel reporting,40%,Publish the funnel dashboard every Monday before 11am with commentary on anything that moved more than 10%.
+demo-07,Meera Krishnan,Run the mock interview programme,100%,"Six rounds per student across the quarter, each with written feedback returned inside 48 hours."
+demo-09,Sanya Bedi,Ship the cohort dashboard v2,55%,"Design sign-off, build, QA and release. Success is 80% weekly active use by programme staff."
+demo-09,Sanya Bedi,Retire the legacy attendance sheet,45%,"Everything moved onto the product, the spreadsheet archived and read-only."
+demo-10,Arjun Nair,Rebuild the demo brand kit,100%,"Typography, colour and component library delivered as a Figma library with usage notes."
+demo-11,Tara Iyer,Twelve long-form posts,60%,"Three per month, each reviewed before publishing."
+demo-11,Tara Iyer,Grow newsletter opens to 38%,40%,Baseline is 31%. Measured on the rolling four-send average.

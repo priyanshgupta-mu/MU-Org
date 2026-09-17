@@ -38,7 +38,7 @@
         "oAuthBrandDisplayName": "Masters Union Org Chart",
         "supportEmail": "priyansh.gupta@mastersunion.org",
         "authorizedRedirectUris": [
-          "https://pgp-mu-org-char.web.app"
+          "https://mu-org-chart.web.app"
         ]
       }
     }

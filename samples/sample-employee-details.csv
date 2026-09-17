@@ -1,0 +1,16 @@
+id,code,name,title,dept,bu,subDept,managerId,empType
+demo-01,DEMO000,Demo Programme,Demo Programme,vert,Demo Programme,,x1,Vertical
+demo-02,DEMO001,Aarav Mehta,Director,d1,Demo Programme,Director's Office,demo-01,Full-time
+demo-03,DEMO002,Priya Raghunathan,Senior Manager - I,Admissions,Demo Programme,Admissions,demo-02,Full-time
+demo-04,DEMO003,Kabir Anand,Senior Manager - II,Placements,Demo Programme,Career Outreach,demo-02,Full-time
+demo-05,DEMO004,Ishita Rao,Manager,Admissions,Demo Programme,Admissions,demo-03,Full-time
+demo-06,DEMO005,Rohan Fernandes,Manager,Admissions,Demo Programme,Admissions,demo-03,Full-time
+demo-07,DEMO006,Meera Krishnan,Associate,Placements,Demo Programme,Career Outreach,demo-04,Full-time
+demo-08,DEMO007,Devansh Kapoor,Associate,Placements,Demo Programme,Placement Operations,demo-04,Full-time
+demo-09,DEMO008,Sanya Bedi,Product Analyst,Product,Demo Programme,Tech,demo-02,Full-time
+demo-10,DEMO009,Arjun Nair,Design Consultant,Design,Demo Programme,Brand,demo-02,Consultant
+demo-11,DEMO010,Tara Iyer,Marketing Intern,Marketing,Demo Programme,Content,demo-09,Intern
+demo-12,DEMO011,Open role,Admission Counsellor - II,Admissions,Demo Programme,Admissions,demo-03,Open role
+demo-13,DEMO012,Open role,Admission Counsellor - II,Admissions,Demo Programme,Admissions,demo-03,Open role
+demo-14,DEMO013,Open role,Admission Counsellor - II,Admissions,Demo Programme,Admissions,demo-03,Open role
+demo-15,DEMO014,Open role,Placement Manager,Placements,Demo Programme,Career Outreach,demo-04,Open role
