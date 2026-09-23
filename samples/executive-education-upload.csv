@@ -1,0 +1,98 @@
+id,code,name,title,dept,bu,subDept,managerId,empType
+ex26447,26447,Nikhil Mittal,Managing Director,d1,Executive Education,Leadership,vex,Full-time
+ex29014,29014,Shreyashi Bairagi,Executive,c4,Executive Education,Design,cf27683,Full-time
+ex29055,29055,Divya Bohra,Executive,c4,Executive Education,Design,cf27683,Full-time
+ex29072,29072,Manish Panchal,Senior Executive,c4,Executive Education,Design,cf27683,Full-time
+ex26132,26132,Vikas Singha,Associate Director,d3,Executive Education,Leadership,ex26447,Full-time
+ex27477,27477,Akshay Dhall,General Manager,d3,Executive Education,Conversion,ex26447,Full-time
+ex29438,29438,Vishwanath Nair,Associate Director,d3,Executive Education,Leadership,ex26447,Full-time
+ex29545,29545,Ratan Anmol Sethi,Associate Director,d3,Executive Education,Leadership,ex26447,Full-time
+ex28982,28982,Kashyap Kapoor,General Manager,d3,Executive Education,Conversion,ex26447,Full-time
+ex26270,26270,Aarti Sharma,Associate Professor - II,d4,Executive Education,Leadership,ex26447,Full-time
+ex26309,26309,Rinku Mahindru,Associate Professor - II,d4,Executive Education,Leadership,ex26447,Full-time
+ex26448,26448,Karan Singh,Deputy Director,d1,Executive Education,Director's Office,ex26447,Full-time
+ex27762,27762,Priyam Bansal,Deputy Director,d7,Executive Education,Delivery,ex26447,Full-time
+ex28120,28120,Anika Atwal,Deputy Director,d7,Executive Education,Delivery,ex26447,Full-time
+ex30452,30452,Ishank Mehta,Associate Director,d1,Executive Education,Director's Office,ex26447,Full-time
+ex28906,28906,Swapnil Dagur,Senior Manager - I,c4,Executive Education,Marketing,ex26447,Full-time
+ex28807,28807,Tara Anand Kumar,Associate Director,c4,Executive Education,Leadership,ex26447,Full-time
+ex29227,29227,Muskaan Khanna,General Manager,d9,Executive Education,B2B Enterprise,ex26447,Full-time
+ex29288,29288,Noopur Maheshwari,Deputy Director,d7,Executive Education,Delivery,ex26447,Full-time
+ex27423,27423,Gaurav Kumar Sharma,Associate Director,d2,Executive Education,Leadership,ex26447,Full-time
+ex29745,29745,Silvy Kalra,General Manager,d7,Executive Education,Delivery,ex26447,Full-time
+cf28315,28315,Naveen Sagar,Senior Manager - II,c4,Central Functions,Marketing,ex26447,Full-time
+cf28996,28996,Poornima Rai,Associate Director,c10,Central Functions,New Initiatives,ex26447,Full-time
+cft38,TBH,Open role,General Manager – Executive Education,c5,Central Functions,Admin,ex26447,Open role
+ex27510,27510,Abhishek Ghosh,General Manager,d3,Executive Education,Conversion,ex26132,Full-time
+ex28144,28144,Rohit Walia,General Manager,d3,Executive Education,Conversion,ex29438,Full-time
+ex28823,28823,Maria Joseph Sampath Kumar,General Manager,d3,Executive Education,Conversion,ex29438,Full-time
+ex28858,28858,Prapat Saxena,General Manager,d3,Executive Education,Conversion,ex26132,Full-time
+ex29100,29100,Akash Tripathi,General Manager,d3,Executive Education,Conversion,ex29438,Full-time
+ex29588,29588,Yajan Chopra,General Manager,d3,Executive Education,Conversion,ex29438,Full-time
+ex29743,29743,Junaid Shaikh,General Manager,d3,Executive Education,Conversion,ex29438,Full-time
+ex29777,29777,Aman Kumar,General Manager,d3,Executive Education,Conversion,ex29438,Full-time
+ex29829,29829,Riddhi Mukherjee,Deputy Director,d3,Executive Education,Conversion,ex29438,Full-time
+ex30246,30246,Robert Johnson,General Manager,d3,Executive Education,Conversion,ex26132,Full-time
+ex26206,26206,Srishti Kush,Senior Executive,d3,Executive Education,Sales Ops,ex26448,Full-time
+ex26304,26304,Nirbhay Daniel Singh,Manager,d3,Executive Education,Sales Ops,ex26448,Full-time
+ex28004,28004,Harjeet Singh,Associate,d3,Executive Education,Sales Ops,ex26448,Full-time
+ex28145,28145,Shivam Shekhar,Associate Program Manager,d3,Executive Education,Sales Ops,ex26448,Full-time
+ex28313,28313,Himanshu Kumar Dubey,Senior Executive,d3,Executive Education,Sales Ops,ex26448,Full-time
+ex28667,28667,Gurpreet Kaur,Program Manager,d3,Executive Education,Sales Ops,ex26448,Full-time
+ex29174,29174,Neeraj Singh,Executive,d3,Executive Education,Sales Ops,ex26448,Full-time
+ex29766,29766,Arun Arya,Senior Manager - I,d3,Executive Education,Sales Ops,ex26448,Full-time
+ex30055,30055,Souvik Deb,Executive,d3,Executive Education,Sales Ops,ex29438,Full-time
+ex26327,26327,Puneet Satija,Senior Placement Manager - I,d2,Executive Education,Outreach,ex27423,Full-time
+ex26328,26328,Garvit Gupta,Senior Manager - I,d2,Executive Education,Outreach,ex27423,Full-time
+ex27371,27371,Shruti Gulati,Placement Manager - II,d2,Executive Education,Outreach,ex27423,Full-time
+ex27385,27385,Shubika Sharma,Senior Manager - I,c4,Executive Education,Marketing,ex28807,Full-time
+ex27394,27394,Aishwarya Lakshman,Placement Manager - I,d2,Executive Education,Outreach,ex27423,Full-time
+ex27478,27478,Anshu Kapoor,Placement Manager - I,d2,Executive Education,Outreach,ex27423,Full-time
+ex27483,27483,Anish Tripathi,Program Manager,d2,Executive Education,Career Ops,ex27423,Full-time
+ex27628,27628,Parimal Mandal,Senior Placement Manager - I,d2,Executive Education,Outreach,ex27423,Full-time
+ex27775,27775,Abhishek Gaur,Senior Program Manager - I,d7,Executive Education,Delivery,ex27762,Full-time
+ex27986,27986,Nishi Rai,Placement Manager - II,d2,Executive Education,Outreach,ex27423,Full-time
+ex28082,28082,Swati Punia,Manager,d9,Executive Education,B2B Enterprise,ex27423,Full-time
+ex28096,28096,Ritika Raviprakash Prasad,Manager,d9,Executive Education,B2B Enterprise,ex27423,Full-time
+ex28121,28121,Rishabh Sharma,Associate Program Manager,d4,Executive Education,Academics Ops,ex26309,Full-time
+ex28163,28163,Simran Hora,Manager,d9,Executive Education,B2B Enterprise,ex27423,Full-time
+ex28170,28170,Priya Choudhary,Senior Manager - I,d2,Executive Education,Career Prep,ex27423,Full-time
+ex28294,28294,Aryanshi Dubey,Placement Manager - I,d2,Executive Education,Outreach,ex27423,Full-time
+ex28329,28329,Rishabh Gupta,Senior Manager - I,d7,Executive Education,Delivery,ex28120,Full-time
+ex28471,28471,Kumkum .,Associate Program Manager,d4,Executive Education,Academics Ops,ex26309,Full-time
+ex28464,28464,Riya Kumari Karn,Senior Executive,d2,Executive Education,Career Ops,ex27423,Full-time
+ex28779,28779,Ishika Arora,Associate Program Manager,d4,Executive Education,Academics Ops,ex26270,Full-time
+ex28789,28789,Manya Kumari,Associate Program Manager,d4,Executive Education,Academics Ops,ex26309,Full-time
+ex28853,28853,Ashutosh Pandey,Associate Program Manager,d4,Executive Education,Academics Ops,ex26270,Full-time
+ex28983,28983,Umika Mongia,Manager,d7,Executive Education,Delivery,ex28120,Full-time
+ex29008,29008,Sarang Parashar,Associate Program Manager,d7,Executive Education,Delivery,ex29288,Full-time
+ex29026,29026,Aakriti Jaiswal,Program Manager,d7,Executive Education,Delivery,ex28120,Full-time
+ex29107,29107,Aditya Raj,Executive,d4,Executive Education,Academics Ops,ex26270,Full-time
+ex29130,29130,Riya Sehgal,Senior Executive,d9,Executive Education,B2B Enterprise,cf28996,Full-time
+ex29242,29242,Ashwat Jain,Manager,d7,Executive Education,Delivery,ex28120,Full-time
+ex29393,29393,Priyanshi Verma,Manager,c4,Executive Education,Marketing,ex28807,Full-time
+ex29369,29369,Himanshu Kumar,Associate,d4,Executive Education,Academics Ops,ex26270,Full-time
+ex29442,29442,Shashank Kushwaha,Associate,d4,Executive Education,Academics Ops,ex26270,Full-time
+ex29476,29476,Diksha Goklani,Manager,c4,Executive Education,Marketing,ex28807,Full-time
+ex29532,29532,Tista Talwar,Manager,d9,Executive Education,B2B Enterprise,ex27423,Full-time
+ex29519,29519,Sunil Sharma,Associate,d4,Executive Education,Academics Ops,ex26270,Full-time
+ex29575,29575,Vidhi,Executive,d2,Executive Education,Career Ops,ex27423,Full-time
+ex29589,29589,Anushka Biswas,Associate,d4,Executive Education,Academics Ops,ex26270,Full-time
+ex29710,29710,Divya Dagar,Program Associate,d4,Executive Education,Academics Ops,ex26309,Full-time
+ex29715,29715,Gursimran Kaur,Senior Manager - I,d7,Executive Education,Delivery,ex27762,Full-time
+ex29722,29722,Rishabh Singla,Program Manager,d7,Executive Education,Delivery,ex29288,Full-time
+ex29848,29848,Suman Dubey,Program Associate,d2,Executive Education,Career Ops,ex27423,Full-time
+ex30010,30010,Anamika Mani,Program Manager,d7,Executive Education,Delivery,ex27762,Full-time
+ex30125,30125,Aparajita Tiwari,Senior Manager - I,c4,Executive Education,Marketing,ex28807,Full-time
+ex30248,30248,Gagandeep Singh,Program Manager,d7,Executive Education,Delivery,ex27762,Full-time
+ex30600,30600,Ashish,Program Manager,d7,Executive Education,Delivery,ex27762,Full-time
+ex30590,30590,Bhanu Valecha,Manager,c4,Executive Education,Performance Marketing,cf28315,Full-time
+ex30680,30680,Janpreet Singh Chawla,Senior Manager - I,c4,Executive Education,Performance Marketing,cf28315,Full-time
+ex30795,30795,Subhadeep Mitra,Program Manager,d7,Executive Education,Delivery,ex28120,Full-time
+cf27768,27768,Mayank Bhatia,Senior Program Manager - I,c4,Central Functions,Marketing (Mayank),ex27423,Full-time
+ex28032,28032,Ashmi V Tom,Senior Executive,d2,Executive Education,Career Prep,ex28170,Full-time
+ex28106,28106,Reshab Bhargav,Placement Manager - I,d2,Executive Education,Outreach,ex27628,Full-time
+ex28894,28894,Shaily Singh,Manager,d2,Executive Education,Career Prep,ex28170,Full-time
+ex28945,28945,Yashashvi Sharma,Manager,d2,Executive Education,Career Prep,ex28170,Full-time
+ex29057,29057,Niharika.,Program Manager,d7,Executive Education,Delivery,ex27775,Full-time
+ex29907,29907,Yashvi Modi,Associate,d2,Executive Education,Outreach,ex27628,Full-time
