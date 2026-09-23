@@ -8,8 +8,8 @@
     "predev": "npm run sync",
     "dev": "npx -y firebase-tools@latest emulators:start --only hosting",
     "predeploy": "npm run sync",
-    "deploy": "npx -y firebase-tools@latest deploy --only hosting",
-    "deploy:rules": "npx -y firebase-tools@latest deploy --only firestore:rules",
-    "deploy:all": "npx -y firebase-tools@latest deploy --only firestore,auth,hosting"
+    "deploy": "npx -y firebase-tools@latest deploy --only hosting --project mu-org-chart",
+    "deploy:rules": "npx -y firebase-tools@latest deploy --only firestore:rules --project mu-org-chart",
+    "deploy:all": "npx -y firebase-tools@latest deploy --only firestore,auth,hosting --project mu-org-chart"
   }
 }

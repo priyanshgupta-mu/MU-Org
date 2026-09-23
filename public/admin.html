@@ -112,6 +112,15 @@
     .prev th, .prev td { font-size: 12px; padding: 6px 10px; white-space: nowrap; }
     .prev td.bad { color: #8C1D18; white-space: normal; }
 
+    .acc-add { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 12px; }
+    .acc-add textarea { flex: 1; min-height: 38px; padding: 9px 12px; border-radius: 10px; border: 1px solid #D4D4D4; resize: vertical; line-height: 1.4; }
+    .acc-list { max-height: 340px; overflow: auto; border: 1px solid #E5E5E5; border-radius: 10px; }
+    .acc-row { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-bottom: 1px solid #F0F0F0; }
+    .acc-row:last-child { border-bottom: 0; }
+    .acc-row .e { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+    .acc-row .e small { display: block; color: #A3A3A3; font-size: 11px; }
+    .acc-row .role { font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 20px; background: #F5F5F5; color: #525252; white-space: nowrap; }
+
     @media (max-width: 720px) {
       .grid { grid-template-columns: 1fr; }
       .hide-m { display: none; }
@@ -133,7 +142,7 @@
   <!-- sign-in gate -->
   <div class="gate" id="gate">
     <h1>Admin sign in</h1>
-    <p>Sign in with your Masters&rsquo; Union Google account.<br>Only listed admins can make changes.</p>
+    <p>Sign in with your Masters&rsquo; Union Google account.<br>Only people with admin access can open this page.</p>
     <button class="btn yellow" id="signin" style="margin: 0 auto;">Continue with Google</button>
     <p id="gateErr" style="color:#8C1D18; margin-top: 16px; display: none;"></p>
   </div>
@@ -154,6 +163,7 @@
       <button class="btn yellow hidden" id="syncBtn"></button>
       <button class="btn hidden" id="reconcileBtn"></button>
       <button class="btn hidden" id="fixBtn"></button>
+      <button class="btn hidden" id="accessBtn">Manage access</button>
       <button class="btn" id="exportBtn">Export CSV</button>
       <button class="btn" id="uploadBtn">Bulk upload</button>
       <button class="btn dark" id="addBtn">+ Add person</button>
@@ -291,13 +301,30 @@
     </div>
   </div>
 
+  <!-- admin access modal -->
+  <div class="overlay" id="accOverlay">
+    <div class="modal">
+      <h2>Admin access</h2>
+      <p class="sub" style="margin: -10px 0 14px;">Everyone listed here can sign in to this page and edit the org chart. Owners and access managers are fixed and can&rsquo;t be removed here.</p>
+      <div class="acc-add">
+        <textarea id="accNew" rows="1" spellcheck="false" placeholder="name@mastersunion.org — paste one or several"></textarea>
+        <button class="btn dark" id="accAddBtn" style="height: 38px;">Give access</button>
+      </div>
+      <div class="err" id="accErr"></div>
+      <div class="acc-list" id="accList"></div>
+      <div class="mfoot">
+        <button class="btn" id="accClose">Done</button>
+      </div>
+    </div>
+  </div>
+
   <div class="toast" id="toast"></div>
 
   <script src="/seed.js"></script>
   <script type="module">
     import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js';
     import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js';
-    import { getFirestore, collection, getDocs, doc, setDoc, deleteDoc, writeBatch } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js';
+    import { getFirestore, collection, getDocs, getDoc, doc, setDoc, deleteDoc, writeBatch, serverTimestamp } from 'https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js';
 
     const firebaseConfig = {
       apiKey: "AIzaSyDbyEduHjuKvWPzbwEySEcUAjxTcHhz_B0",
@@ -307,8 +334,12 @@
       messagingSenderId: "383526925713",
       appId: "1:383526925713:web:dad15d12914ca01a915630"
     };
-    // Mirrors the list in firestore.rules — the rules are what actually enforce access.
-    const ADMIN_EMAILS = ['salil.narkar1@mastersunion.org', 'priyansh.gupta@mastersunion.org', 'rachit.jain@mastersunion.org', 'chetan@mu.org', 'mahima.mahur@mu.org'];
+    // Mirrors firestore.rules — the rules are what actually enforce access.
+    // These two lists are fixed; every other admin is a doc in the `admins`
+    // collection, managed from "Manage access".
+    const OWNERS = ['salil.narkar1@mastersunion.org', 'priyansh.gupta@mastersunion.org'];
+    const ACCESS_MANAGERS = ['mahima.mahur@mastersunion.org', 'anurag.mahor@mastersunion.org'];
+    const KNOWN_DOMAINS = ['mastersunion.org', 'tetr.org'];
     const EMP_TYPES = ['Full-time', 'Open role', 'Consultant', 'Intern', 'Vertical', 'Inferred'];
 
     const app = initializeApp(firebaseConfig);
@@ -344,23 +375,117 @@
     getRedirectResult(auth).catch(() => {});
     $('signout').onclick = () => signOut(auth);
 
+    let me = '';               // signed-in email, lower-cased
+    let canGrant = false;      // owner or access manager
+
     onAuthStateChanged(auth, async user => {
+      $('gateErr').style.display = 'none';
       if (user) {
+        me = (user.email || '').toLowerCase();
         $('who').textContent = user.email;
         $('signout').classList.remove('hidden');
+        canGrant = OWNERS.includes(me) || ACCESS_MANAGERS.includes(me);
+        let ok = canGrant;
+        if (!ok) {
+          try { ok = (await getDoc(doc(db, 'admins', me))).exists(); } catch (e) { ok = false; }
+        }
+        if (auth.currentUser !== user) return;   // signed out while we were checking
+        if (!ok) {
+          $('gate').classList.remove('hidden');
+          $('app').classList.add('hidden');
+          $('gateErr').textContent = user.email + ' does not have admin access. Ask Mahima Mahur or Anurag Mahor to add you, or sign in with a different account.';
+          $('gateErr').style.display = 'block';
+          return;
+        }
+        $('accessBtn').classList.toggle('hidden', !canGrant);
         $('gate').classList.add('hidden');
         $('app').classList.remove('hidden');
-        if (!ADMIN_EMAILS.includes(user.email)) {
-          showErr('You are signed in as ' + user.email + ', which is not on the admin list. You can browse, but saves will be rejected. Ask an admin to add you in firestore.rules.');
-        }
         await reload();
       } else {
+        me = ''; canGrant = false;
         $('who').textContent = '';
         $('signout').classList.add('hidden');
         $('gate').classList.remove('hidden');
         $('app').classList.add('hidden');
       }
     });
+
+    // ---------- admin access ----------
+    let admins = [];
+    async function loadAdmins() {
+      const snap = await getDocs(collection(db, 'admins'));
+      admins = snap.docs.map(d => ({ email: d.id, ...d.data() }))
+        .sort((a, b) => a.email.localeCompare(b.email));
+      renderAdmins();
+    }
+    function renderAdmins() {
+      const list = $('accList');
+      list.innerHTML = '';
+      const row = (email, note, role, onRemove) => {
+        const r = document.createElement('div');
+        r.className = 'acc-row';
+        const e = document.createElement('div');
+        e.className = 'e';
+        e.textContent = email;
+        if (note) { const s = document.createElement('small'); s.textContent = note; e.appendChild(s); }
+        r.appendChild(e);
+        if (role) { const t = document.createElement('span'); t.className = 'role'; t.textContent = role; r.appendChild(t); }
+        if (onRemove) {
+          const b = document.createElement('button');
+          b.className = 'btn sm danger';
+          b.textContent = email === me ? 'Remove me' : 'Remove';
+          b.onclick = onRemove;
+          r.appendChild(b);
+        }
+        list.appendChild(r);
+      };
+      OWNERS.forEach(e => row(e, '', 'Owner'));
+      ACCESS_MANAGERS.forEach(e => row(e, '', 'Gives access'));
+      admins.forEach(a => row(a.email, a.addedBy ? 'added by ' + a.addedBy : '', '', async () => {
+        if (!confirm('Remove admin access for ' + a.email + '?')) return;
+        try {
+          await deleteDoc(doc(db, 'admins', a.email));
+          toast('Removed ' + a.email);
+          await loadAdmins();
+        } catch (e) { accErr('Could not remove: ' + e.message); }
+      }));
+    }
+    function accErr(m) { $('accErr').textContent = m; $('accErr').classList.add('on'); }
+
+    $('accessBtn').onclick = async () => {
+      $('accErr').classList.remove('on');
+      $('accNew').value = '';
+      $('accList').innerHTML = '<div class="acc-row" style="color:#A3A3A3">Loading…</div>';
+      $('accOverlay').classList.add('on');
+      try { await loadAdmins(); } catch (e) { accErr('Could not load the admin list: ' + e.message); }
+    };
+    $('accClose').onclick = () => $('accOverlay').classList.remove('on');
+    $('accOverlay').onclick = e => { if (e.target === $('accOverlay')) $('accOverlay').classList.remove('on'); };
+
+    const EMAIL_RE = /^[^@\s/]+@[^@\s/]+\.[a-z]{2,}$/;
+    $('accAddBtn').onclick = async () => {
+      $('accErr').classList.remove('on');
+      const tokens = [...new Set($('accNew').value.split(/[\s,;]+/).map(s => s.trim().toLowerCase()).filter(Boolean))];
+      if (!tokens.length) return;
+      const bad = tokens.filter(t => !EMAIL_RE.test(t));
+      if (bad.length) { accErr('Not an email address: ' + bad.join(', ')); return; }
+      const have = new Set([...OWNERS, ...ACCESS_MANAGERS, ...admins.map(a => a.email)]);
+      const fresh = tokens.filter(t => !have.has(t));
+      if (!fresh.length) { accErr('Already on the list.'); return; }
+      // a typo like "matersunion.org" would grant access to an account nobody owns
+      const odd = fresh.filter(t => !KNOWN_DOMAINS.includes(t.split('@')[1]));
+      if (odd.length && !confirm('These are not @' + KNOWN_DOMAINS.join(' or @') + ' addresses:\n\n' + odd.join('\n') + '\n\nGive them access anyway?')) return;
+      $('accAddBtn').disabled = true;
+      try {
+        const batch = writeBatch(db);
+        fresh.forEach(e => batch.set(doc(db, 'admins', e), { addedBy: me, addedAt: serverTimestamp() }));
+        await batch.commit();
+        $('accNew').value = '';
+        toast('Gave admin access to ' + (fresh.length === 1 ? fresh[0] : fresh.length + ' people'));
+        await loadAdmins();
+      } catch (e) { accErr('Could not give access: ' + e.message); }
+      $('accAddBtn').disabled = false;
+    };
 
     // ---------- data ----------
     async function reload() {
@@ -911,8 +1036,13 @@
     const PEOPLE_COLS = ['id', 'code', 'name', 'title', 'dept', 'bu', 'subDept', 'managerId', 'empType'];
     const GOAL_COLS = ['personId', 'personName', 'title', 'target', 'metric'];
 
+    // managerName rides along after managerId so the sheet reads; the upload ignores it
+    const EXPORT_COLS = [...PEOPLE_COLS.slice(0, PEOPLE_COLS.indexOf('managerId') + 1), 'managerName',
+      ...PEOPLE_COLS.slice(PEOPLE_COLS.indexOf('managerId') + 1)];
     function peopleCsv(list) {
-      return csvBuild([PEOPLE_COLS, ...list.map(p => PEOPLE_COLS.map(c => p[c] || ''))]);
+      const idx = byId();
+      return csvBuild([EXPORT_COLS, ...list.map(p => EXPORT_COLS.map(c =>
+        c === 'managerName' ? (idx[p.managerId] ? idx[p.managerId].name : '') : p[c] || ''))]);
     }
     function goalsCsv(list) {
       const rows = [GOAL_COLS];
@@ -932,7 +1062,7 @@
     const SPEC = {
       people: 'One row per person. Header required. Columns: <code>' + PEOPLE_COLS.join('</code> <code>') + '</code><br>' +
         '<strong>id</strong> blank means a new person. <strong>dept</strong> accepts the id or the name. ' +
-        '<strong>managerId</strong> accepts an id, an employee code, or an exact name. ' +
+        '<strong>managerId</strong> accepts an id, an employee code, or an exact name. <strong>managerName</strong> is ignored — it is there so the file reads. ' +
         'Goals are never touched by this tab — use the Goals tab for those.',
       goals: 'One row per goal; a person with three goals gets three rows. Header required. Columns: <code>' + GOAL_COLS.join('</code> <code>') + '</code><br>' +
         '<strong>personId</strong> accepts an id, an employee code, or an exact name. <strong>personName</strong> is ignored — it is there so the file reads. ' +

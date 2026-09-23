@@ -1,18 +1,31 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Admins who may edit the org chart. Add/remove emails here and redeploy:
-    //   npx -y firebase-tools@latest deploy --only firestore:rules
+    // Who may edit the org chart:
+    //   owners          — fixed here, always admins, can give and take access
+    //   access managers — fixed here, same powers as owners
+    //   everyone else   — a doc at /admins/{email}, added or removed from the
+    //                     admin panel's "Manage access" by an owner or manager
+    // Owners and managers live here rather than in the collection so nobody can
+    // lock them out from the panel. Change them here and redeploy:
+    //   npm run deploy:rules
+    function signedIn() {
+      return request.auth != null && request.auth.token.email_verified == true;
+    }
+    function email() {
+      return request.auth.token.email.lower();
+    }
+    function canGrant() {
+      return signedIn() && email() in [
+        'salil.narkar1@mastersunion.org',
+        'priyansh.gupta@mastersunion.org',
+        'mahima.mahur@mastersunion.org',
+        'anurag.mahor@mastersunion.org'
+      ];
+    }
     function isAdmin() {
-      return request.auth != null
-        && request.auth.token.email_verified == true
-        && request.auth.token.email in [
-          'salil.narkar1@mastersunion.org',
-          'priyansh.gupta@mastersunion.org',
-          'rachit.jain@mastersunion.org',
-          'chetan@mu.org',
-          'mahima.mahur@mu.org'
-        ];
+      return canGrant()
+        || (signedIn() && exists(/databases/$(database)/documents/admins/$(email())));
     }
 
     function validPerson() {
@@ -35,6 +48,19 @@ service cloud.firestore {
       allow read: if true;
       allow create, update: if isAdmin() && validPerson() && personId.size() <= 60;
       allow delete: if isAdmin();
+    }
+
+    // The admin list. Anyone signed in may check their own entry (that is how
+    // the panel decides whether to let them in); admins may see the whole list.
+    match /admins/{adminEmail} {
+      allow read: if isAdmin() || (signedIn() && email() == adminEmail);
+      allow create, update: if canGrant()
+        && adminEmail == adminEmail.lower()
+        && adminEmail.matches('^[^@\\s/]+@[^@\\s/]+[.][a-z]{2,}$')
+        && request.resource.data.keys().hasOnly(['addedBy', 'addedAt'])
+        && request.resource.data.addedBy == email()
+        && request.resource.data.addedAt == request.time;
+      allow delete: if canGrant();
     }
   }
 }
