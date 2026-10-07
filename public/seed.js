@@ -2926,95 +2926,429 @@ window.__MU_SEED = {
       { id: "ugt42", code: "TBH", name: "Open role", title: "Senior Manager - II", dept: "d2", bu: "UG Programme", subDept: "Career Outreach", managerId: "ug29128", empType: "Open role", kras: [] },
       { id: "ugt43", code: "TBH", name: "Open role", title: "Senior Manager - II", dept: "d2", bu: "UG Programme", subDept: "Career Outreach", managerId: "ug29128", empType: "Open role", kras: [] },
       { id: "ugt44", code: "TBH", name: "Open role", title: "Manager", dept: "d7", bu: "UG Programme", subDept: "Student Experience", managerId: "ug26314", empType: "Open role", kras: [] },
-      { id: "ex26132", code: "26132", name: "Vikas Singha", title: "Associate Director", dept: "d3", bu: "Executive Education", subDept: "Leadership", managerId: "ex26447", empType: "Full-time", kras: [] },
-      { id: "ex27477", code: "27477", name: "Akshay Dhall", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex26447", empType: "Full-time", kras: [] },
-      { id: "ex29438", code: "29438", name: "Vishwanath Nair", title: "Associate Director", dept: "d3", bu: "Executive Education", subDept: "Leadership", managerId: "ex26447", empType: "Full-time", kras: [] },
-      { id: "ex27510", code: "27510", name: "Abhishek Ghosh", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex26132", empType: "Full-time", kras: [] },
-      { id: "ex29545", code: "29545", name: "Ratan Anmol Sethi", title: "Associate Director", dept: "d3", bu: "Executive Education", subDept: "Leadership", managerId: "ex26447", empType: "Full-time", kras: [] },
-      { id: "ex28144", code: "28144", name: "Rohit Walia", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex29438", empType: "Full-time", kras: [] },
-      { id: "ex28823", code: "28823", name: "Maria Joseph Sampath Kumar", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex29438", empType: "Full-time", kras: [] },
-      { id: "ex28858", code: "28858", name: "Prapat Saxena", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex26132", empType: "Full-time", kras: [] },
-      { id: "ex28982", code: "28982", name: "Kashyap Kapoor", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex26447", empType: "Full-time", kras: [] },
-      { id: "ex29100", code: "29100", name: "Akash Tripathi", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex29438", empType: "Full-time", kras: [] },
-      { id: "ex29588", code: "29588", name: "Yajan Chopra", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex29438", empType: "Full-time", kras: [] },
-      { id: "ex29743", code: "29743", name: "Junaid Shaikh", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex29438", empType: "Full-time", kras: [] },
-      { id: "ex29777", code: "29777", name: "Aman Kumar", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex29438", empType: "Full-time", kras: [] },
-      { id: "ex29829", code: "29829", name: "Riddhi Mukherjee", title: "Deputy Director", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex29438", empType: "Full-time", kras: [] },
-      { id: "ex30246", code: "30246", name: "Robert Johnson", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex26132", empType: "Full-time", kras: [] },
-      { id: "ex26206", code: "26206", name: "Srishti Kush", title: "Senior Executive", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex26448", empType: "Full-time", kras: [] },
-      { id: "ex26304", code: "26304", name: "Nirbhay Daniel Singh", title: "Manager", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex26448", empType: "Full-time", kras: [] },
-      { id: "ex28004", code: "28004", name: "Harjeet Singh", title: "Associate", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex26448", empType: "Full-time", kras: [] },
-      { id: "ex28145", code: "28145", name: "Shivam Shekhar", title: "Associate Program Manager", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex26448", empType: "Full-time", kras: [] },
-      { id: "ex28313", code: "28313", name: "Himanshu Kumar Dubey", title: "Senior Executive", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex26448", empType: "Full-time", kras: [] },
-      { id: "ex28667", code: "28667", name: "Gurpreet Kaur", title: "Program Manager", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex26448", empType: "Full-time", kras: [] },
-      { id: "ex29174", code: "29174", name: "Neeraj Singh", title: "Executive", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex26448", empType: "Full-time", kras: [] },
-      { id: "ex29766", code: "29766", name: "Arun Arya", title: "Senior Manager - I", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex26448", empType: "Full-time", kras: [] },
-      { id: "ex30055", code: "30055", name: "Souvik Deb", title: "Executive", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex29438", empType: "Full-time", kras: [] },
-      { id: "ex26270", code: "26270", name: "Aarti Sharma", title: "Associate Professor - II", dept: "d4", bu: "Executive Education", subDept: "Leadership", managerId: "ex26447", empType: "Full-time", kras: [] },
-      { id: "ex26309", code: "26309", name: "Rinku Mahindru", title: "Associate Professor - II", dept: "d4", bu: "Executive Education", subDept: "Leadership", managerId: "ex26447", empType: "Full-time", kras: [] },
-      { id: "ex26327", code: "26327", name: "Puneet Satija", title: "Senior Placement Manager - I", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27423", empType: "Full-time", kras: [] },
-      { id: "ex26328", code: "26328", name: "Garvit Gupta", title: "Senior Manager - I", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27423", empType: "Full-time", kras: [] },
+      { id: "ex26132", code: "26132", name: "Vikas Singha", title: "Associate Director", dept: "d3", bu: "Executive Education", subDept: "Leadership", managerId: "ex26447", empType: "Full-time", kras: [
+        { title: "Revenue", metric: "8.5 Lakh ARPS", target: "70%" },
+        { title: "Attrition", metric: "< 12% Attrition", target: "20%" },
+        { title: "Adherence to the Sales Policy", metric: "100% adherence to sales process", target: "10%" }
+      ] },
+      { id: "ex27477", code: "27477", name: "Akshay Dhall", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex26447", empType: "Full-time", kras: [
+        { title: "Revenue", metric: "8.5 Lakh ARPS", target: "70%" },
+        { title: "Attrition", metric: "< 12% Attrition", target: "20%" },
+        { title: "Adherence to the Sales Policy", metric: "100% adherence to sales process", target: "10%" }
+      ] },
+      { id: "ex29438", code: "29438", name: "Vishwanath Nair", title: "Associate Director", dept: "d3", bu: "Executive Education", subDept: "Leadership", managerId: "ex26447", empType: "Full-time", kras: [
+        { title: "Revenue", metric: "8.5 Lakh ARPS", target: "70%" },
+        { title: "Attrition", metric: "< 12% Attrition", target: "20%" },
+        { title: "Adherence to the Sales Policy", metric: "100% adherence to sales process", target: "10%" }
+      ] },
+      { id: "ex27510", code: "27510", name: "Abhishek Ghosh", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex26132", empType: "Full-time", kras: [
+        { title: "Revenue", metric: "8.5 Lakh ARPS", target: "70%" },
+        { title: "Attrition", metric: "< 12% Attrition", target: "20%" },
+        { title: "Adherence to the Sales Policy", metric: "100% adherence to sales process", target: "10%" }
+      ] },
+      { id: "ex29545", code: "29545", name: "Ratan Anmol Sethi", title: "Associate Director", dept: "d3", bu: "Executive Education", subDept: "Leadership", managerId: "ex26447", empType: "Full-time", kras: [
+        { title: "Revenue", metric: "8.5 Lakh ARPS", target: "70%" },
+        { title: "Attrition", metric: "< 12% Attrition", target: "20%" },
+        { title: "Adherence to the Sales Policy", metric: "100% adherence to sales process", target: "10%" }
+      ] },
+      { id: "ex28144", code: "28144", name: "Rohit Walia", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex29438", empType: "Full-time", kras: [
+        { title: "Revenue", metric: "8.5 Lakh ARPS", target: "70%" },
+        { title: "Attrition", metric: "< 12% Attrition", target: "20%" },
+        { title: "Adherence to the Sales Policy", metric: "100% adherence to sales process", target: "10%" }
+      ] },
+      { id: "ex28823", code: "28823", name: "Maria Joseph Sampath Kumar", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex29438", empType: "Full-time", kras: [
+        { title: "Revenue", metric: "8.5 Lakh ARPS", target: "70%" },
+        { title: "Attrition", metric: "< 12% Attrition", target: "20%" },
+        { title: "Adherence to the Sales Policy", metric: "100% adherence to sales process", target: "10%" }
+      ] },
+      { id: "ex28858", code: "28858", name: "Prapat Saxena", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex26132", empType: "Full-time", kras: [
+        { title: "Revenue", metric: "8.5 Lakh ARPS", target: "70%" },
+        { title: "Attrition", metric: "< 12% Attrition", target: "20%" },
+        { title: "Adherence to the Sales Policy", metric: "100% adherence to sales process", target: "10%" }
+      ] },
+      { id: "ex28982", code: "28982", name: "Kashyap Kapoor", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex26447", empType: "Full-time", kras: [
+        { title: "Revenue", metric: "8.5 Lakh ARPS", target: "70%" },
+        { title: "Attrition", metric: "< 12% Attrition", target: "20%" },
+        { title: "Adherence to the Sales Policy", metric: "100% adherence to sales process", target: "10%" }
+      ] },
+      { id: "ex29100", code: "29100", name: "Akash Tripathi", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex29438", empType: "Full-time", kras: [
+        { title: "Revenue", metric: "8.5 Lakh ARPS", target: "70%" },
+        { title: "Attrition", metric: "< 12% Attrition", target: "20%" },
+        { title: "Adherence to the Sales Policy", metric: "100% adherence to sales process", target: "10%" }
+      ] },
+      { id: "ex29588", code: "29588", name: "Yajan Chopra", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex29438", empType: "Full-time", kras: [
+        { title: "Revenue", metric: "8.5 Lakh ARPS", target: "70%" },
+        { title: "Attrition", metric: "< 12% Attrition", target: "20%" },
+        { title: "Adherence to the Sales Policy", metric: "100% adherence to sales process", target: "10%" }
+      ] },
+      { id: "ex29743", code: "29743", name: "Junaid Shaikh", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex29438", empType: "Full-time", kras: [
+        { title: "Revenue", metric: "8.5 Lakh ARPS", target: "70%" },
+        { title: "Attrition", metric: "< 12% Attrition", target: "20%" },
+        { title: "Adherence to the Sales Policy", metric: "100% adherence to sales process", target: "10%" }
+      ] },
+      { id: "ex29777", code: "29777", name: "Aman Kumar", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex29438", empType: "Full-time", kras: [
+        { title: "Revenue", metric: "8.5 Lakh ARPS", target: "70%" },
+        { title: "Attrition", metric: "< 12% Attrition", target: "20%" },
+        { title: "Adherence to the Sales Policy", metric: "100% adherence to sales process", target: "10%" }
+      ] },
+      { id: "ex29829", code: "29829", name: "Riddhi Mukherjee", title: "Deputy Director", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex29438", empType: "Full-time", kras: [
+        { title: "Revenue", metric: "8.5 Lakh ARPS", target: "70%" },
+        { title: "Attrition", metric: "< 12% Attrition", target: "20%" },
+        { title: "Adherence to the Sales Policy", metric: "100% adherence to sales process", target: "10%" }
+      ] },
+      { id: "ex30246", code: "30246", name: "Robert Johnson", title: "General Manager", dept: "d3", bu: "Executive Education", subDept: "Conversion", managerId: "ex26132", empType: "Full-time", kras: [
+        { title: "Revenue", metric: "8.5 Lakh ARPS", target: "70%" },
+        { title: "Attrition", metric: "< 12% Attrition", target: "20%" },
+        { title: "Adherence to the Sales Policy", metric: "100% adherence to sales process", target: "10%" }
+      ] },
+      { id: "ex26206", code: "26206", name: "Srishti Kush", title: "Senior Executive", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex26448", empType: "Full-time", kras: [
+        { title: "Revenue Realised", metric: "Revenue Realised per month 15 Cr.", target: "100%" }
+      ] },
+      { id: "ex26304", code: "26304", name: "Nirbhay Daniel Singh", title: "Manager", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex26448", empType: "Full-time", kras: [
+        { title: "New hires trainined within onboarding timeline", metric: "target 1005", target: "50%" },
+        { title: "New joiners achieveing 1st sale within 30 days", metric: "target - 20%", target: "100%" }
+      ] },
+      { id: "ex28004", code: "28004", name: "Harjeet Singh", title: "Associate", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex26448", empType: "Full-time", kras: [
+        { title: "Adherence to Inbound Channels", metric: "Adherence to Inbound Channels (Chat/Voice)", target: "100%" }
+      ] },
+      { id: "ex28145", code: "28145", name: "Shivam Shekhar", title: "Associate Program Manager", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex26448", empType: "Full-time", kras: [
+        { title: "Data Management", metric: "Adherence to all data management task", target: "100%" }
+      ] },
+      { id: "ex28313", code: "28313", name: "Himanshu Kumar Dubey", title: "Senior Executive", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex26448", empType: "Full-time", kras: [
+        { title: "Revenue Realised", metric: "Revenue Realised per month 15 Cr.", target: "100%" }
+      ] },
+      { id: "ex28667", code: "28667", name: "Gurpreet Kaur", title: "Program Manager", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex26448", empType: "Full-time", kras: [
+        { title: "Revenue Realised", metric: "Revenue Realised per month 15 Cr.", target: "100%" }
+      ] },
+      { id: "ex29174", code: "29174", name: "Neeraj Singh", title: "Executive", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex26448", empType: "Full-time", kras: [
+        { title: "Adherence to Inbound Channels", metric: "Adherence to Inbound Channels (Chat/Voice)", target: "100%" }
+      ] },
+      { id: "ex29766", code: "29766", name: "Arun Arya", title: "Senior Manager - I", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex26448", empType: "Full-time", kras: [
+        { title: "Data Management", metric: "Adherence to all data management task", target: "100%" }
+      ] },
+      { id: "ex30055", code: "30055", name: "Souvik Deb", title: "Executive", dept: "d3", bu: "Executive Education", subDept: "Sales Ops", managerId: "ex29438", empType: "Full-time", kras: [
+        { title: "Adherence to all data management task", metric: "", target: "100%" }
+      ] },
+      { id: "ex26270", code: "26270", name: "Aarti Sharma", title: "Associate Professor - II", dept: "d4", bu: "Executive Education", subDept: "Leadership", managerId: "ex26447", empType: "Full-time", kras: [
+        { title: "Designing and Executing new curriculam", metric: "Designing and Executing new curriculam", target: "25%" },
+        { title: "Managing end-to-end academics for dedicated programs", metric: "Managing end-to-end academics for dedicated programs", target: "25%" },
+        { title: "Ensuring class feedback for the program", metric: "Ensuring class feedback (4.5+) for the program", target: "25%" },
+        { title: "Tracking learner progression and successful program completion", metric: "Tracking learner progression and successful program completion", target: "10%" },
+        { title: "Maintaining Teaching feedback", metric: "Maintaining Teaching feedback (4.5+)", target: "15%" }
+      ] },
+      { id: "ex26309", code: "26309", name: "Rinku Mahindru", title: "Associate Professor - II", dept: "d4", bu: "Executive Education", subDept: "Leadership", managerId: "ex26447", empType: "Full-time", kras: [
+        { title: "Designing and Executing new curriculam", metric: "Designing and Executing new curriculam", target: "25%" },
+        { title: "Managing end-to-end academics for dedicated programs", metric: "Managing end-to-end academics for dedicated programs", target: "25%" },
+        { title: "Ensuring class feedback for the program", metric: "Ensuring class feedback (4.5+) for the program", target: "25%" },
+        { title: "Tracking learner progression and successful program completion", metric: "Tracking learner progression and successful program completion", target: "10%" },
+        { title: "Maintaining Teaching feedback", metric: "Maintaining Teaching feedback (4.5+)", target: "15%" }
+      ] },
+      { id: "ex26327", code: "26327", name: "Puneet Satija", title: "Senior Placement Manager - I", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27423", empType: "Full-time", kras: [
+        { title: "Count of Students from Exec coursed placed", metric: "Target - 3", target: "70%" },
+        { title: "Average salary of students placed", metric: "9 LPA", target: "30%" }
+      ] },
+      { id: "ex26328", code: "26328", name: "Garvit Gupta", title: "Senior Manager - I", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27423", empType: "Full-time", kras: [
+        { title: "Count of Students from Exec coursed placed", metric: "Target - 3", target: "70%" },
+        { title: "Average salary of students placed", metric: "9 LPA", target: "30%" }
+      ] },
       { id: "ex26447", code: "26447", name: "Nikhil Mittal", title: "Managing Director", dept: "d1", bu: "Executive Education", subDept: "Leadership", managerId: "vex", empType: "Full-time", kras: [] },
-      { id: "ex26448", code: "26448", name: "Karan Singh", title: "Deputy Director", dept: "d1", bu: "Executive Education", subDept: "Director's Office", managerId: "ex26447", empType: "Full-time", kras: [] },
-      { id: "ex27371", code: "27371", name: "Shruti Gulati", title: "Placement Manager - II", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27423", empType: "Full-time", kras: [] },
-      { id: "ex27385", code: "27385", name: "Shubika Sharma", title: "Senior Manager - I", dept: "c4", bu: "Executive Education", subDept: "Marketing", managerId: "ex28807", empType: "Full-time", kras: [] },
-      { id: "ex27394", code: "27394", name: "Aishwarya Lakshman", title: "Placement Manager - I", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27423", empType: "Full-time", kras: [] },
-      { id: "ex27478", code: "27478", name: "Anshu Kapoor", title: "Placement Manager - I", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27423", empType: "Full-time", kras: [] },
-      { id: "ex27483", code: "27483", name: "Anish Tripathi", title: "Program Manager", dept: "d2", bu: "Executive Education", subDept: "Career Ops", managerId: "ex27423", empType: "Full-time", kras: [] },
-      { id: "ex27628", code: "27628", name: "Parimal Mandal", title: "Senior Placement Manager - I", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27423", empType: "Full-time", kras: [] },
-      { id: "ex27762", code: "27762", name: "Priyam Bansal", title: "Deputy Director", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex26447", empType: "Full-time", kras: [] },
-      { id: "ex27775", code: "27775", name: "Abhishek Gaur", title: "Senior Program Manager - I", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex27762", empType: "Full-time", kras: [] },
-      { id: "ex27986", code: "27986", name: "Nishi Rai", title: "Placement Manager - II", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27423", empType: "Full-time", kras: [] },
-      { id: "ex28032", code: "28032", name: "Ashmi V Tom", title: "Senior Executive", dept: "d2", bu: "Executive Education", subDept: "Career Prep", managerId: "ex28170", empType: "Full-time", kras: [] },
-      { id: "ex28082", code: "28082", name: "Swati Punia", title: "Manager", dept: "d9", bu: "Executive Education", subDept: "B2B Enterprise", managerId: "ex27423", empType: "Full-time", kras: [] },
-      { id: "ex28096", code: "28096", name: "Ritika Raviprakash Prasad", title: "Manager", dept: "d9", bu: "Executive Education", subDept: "B2B Enterprise", managerId: "ex27423", empType: "Full-time", kras: [] },
-      { id: "ex28106", code: "28106", name: "Reshab Bhargav", title: "Placement Manager - I", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27628", empType: "Full-time", kras: [] },
-      { id: "ex28120", code: "28120", name: "Anika Atwal", title: "Deputy Director", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex26447", empType: "Full-time", kras: [] },
-      { id: "ex28121", code: "28121", name: "Rishabh Sharma", title: "Associate Program Manager", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26309", empType: "Full-time", kras: [] },
+      { id: "ex26448", code: "26448", name: "Karan Singh", title: "Deputy Director", dept: "d1", bu: "Executive Education", subDept: "Director's Office", managerId: "ex26447", empType: "Full-time", kras: [
+        { title: "Revenue Realised", metric: "target 15 Cr. per month", target: "90%" },
+        { title: "Adherence to the defined sales process (%).", metric: "target 100%", target: "10%" }
+      ] },
+      { id: "ex27371", code: "27371", name: "Shruti Gulati", title: "Placement Manager - II", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27423", empType: "Full-time", kras: [
+        { title: "Count of Students from Exec coursed placed", metric: "Target - 3", target: "70%" },
+        { title: "Average salary of students placed", metric: "9 LPA", target: "30%" }
+      ] },
+      { id: "ex27385", code: "27385", name: "Shubika Sharma", title: "Senior Manager - I", dept: "c4", bu: "Executive Education", subDept: "Marketing", managerId: "ex28807", empType: "Full-time", kras: [
+        { title: "Execute Email and WhatsApp campaigns on schedule.", metric: "100% Campaign Operations", target: "35%" },
+        { title: "Set up webinars and execute webinar communications.", metric: "Webinar Operations", target: "25%" },
+        { title: "Coordinate Central Marketing requests and on-ground execution.", metric: "Cross-functional Coordination", target: "30%" },
+        { title: "Maintain trackers, documentation and SOPs.", metric: "Process Documentation", target: "10%" }
+      ] },
+      { id: "ex27394", code: "27394", name: "Aishwarya Lakshman", title: "Placement Manager - I", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27423", empType: "Full-time", kras: [
+        { title: "Count of Students from Exec coursed placed", metric: "Target - 3", target: "70%" },
+        { title: "Average salary of students placed", metric: "9 LPA", target: "30%" }
+      ] },
+      { id: "ex27478", code: "27478", name: "Anshu Kapoor", title: "Placement Manager - I", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27423", empType: "Full-time", kras: [
+        { title: "Count of Students from Exec coursed placed", metric: "Target - 3", target: "70%" },
+        { title: "Average salary of students placed", metric: "9 LPA", target: "30%" }
+      ] },
+      { id: "ex27483", code: "27483", name: "Anish Tripathi", title: "Program Manager", dept: "d2", bu: "Executive Education", subDept: "Career Ops", managerId: "ex27423", empType: "Full-time", kras: [
+        { title: "Count of students from Exec course applying for the job floated vs their eligibility", metric: "target 60%", target: "60%" },
+        { title: "End to end completion of the drive", metric: "target - 100%", target: "40%" }
+      ] },
+      { id: "ex27628", code: "27628", name: "Parimal Mandal", title: "Senior Placement Manager - I", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27423", empType: "Full-time", kras: [
+        { title: "Count of Students from Exec coursed placed", metric: "Target - 3", target: "70%" },
+        { title: "Average salary of students placed", metric: "9 LPA", target: "30%" }
+      ] },
+      { id: "ex27762", code: "27762", name: "Priyam Bansal", title: "Deputy Director", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex26447", empType: "Full-time", kras: [
+        { title: "NPS", metric: "target - 50%", target: "60%" },
+        { title: "Avg rating", metric: "Events , target - 8", target: "20%" },
+        { title: "LMS", metric: "Health (Update,TAT), target - 100%", target: "5%" },
+        { title: "Learner Attendance", metric: "target - 70%", target: "5%" },
+        { title: "Cost of program delivery", metric: "target - 20%", target: "10%" }
+      ] },
+      { id: "ex27775", code: "27775", name: "Abhishek Gaur", title: "Senior Program Manager - I", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex27762", empType: "Full-time", kras: [
+        { title: "NPS", metric: "target - 50", target: "60%" },
+        { title: "Avg rating", metric: "Events, target - 8", target: "20%" },
+        { title: "LMS", metric: "Health (Update,TAT), target -100%", target: "5%" },
+        { title: "Learner Attendance", metric: "target - 70%", target: "5%" },
+        { title: "Cost of program delivery", metric: "target 20%", target: "10%" }
+      ] },
+      { id: "ex27986", code: "27986", name: "Nishi Rai", title: "Placement Manager - II", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27423", empType: "Full-time", kras: [
+        { title: "Count of Students from Exec coursed placed", metric: "Target - 3", target: "70%" },
+        { title: "Average salary of students placed", metric: "9 LPA", target: "30%" }
+      ] },
+      { id: "ex28032", code: "28032", name: "Ashmi V Tom", title: "Senior Executive", dept: "d2", bu: "Executive Education", subDept: "Career Prep", managerId: "ex28170", empType: "Full-time", kras: [
+        { title: "Count of students from Exec course applying for the job floated vs their eligibility", metric: "target 60%", target: "60%" },
+        { title: "End to end completion of the drive", metric: "target - 100%", target: "40%" }
+      ] },
+      { id: "ex28082", code: "28082", name: "Swati Punia", title: "Manager", dept: "d9", bu: "Executive Education", subDept: "B2B Enterprise", managerId: "ex27423", empType: "Full-time", kras: [
+        { title: "B2B revenue", metric: "Target - Rs 10 lakh / month", target: "100%" }
+      ] },
+      { id: "ex28096", code: "28096", name: "Ritika Raviprakash Prasad", title: "Manager", dept: "d9", bu: "Executive Education", subDept: "B2B Enterprise", managerId: "ex27423", empType: "Full-time", kras: [
+        { title: "B2B revenue", metric: "Target - Rs 10 lakh / month", target: "100%" }
+      ] },
+      { id: "ex28106", code: "28106", name: "Reshab Bhargav", title: "Placement Manager - I", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27628", empType: "Full-time", kras: [
+        { title: "Count of Students from Exec coursed placed", metric: "Target - 3", target: "70%" },
+        { title: "Average salary of students placed", metric: "9 LPA", target: "30%" }
+      ] },
+      { id: "ex28120", code: "28120", name: "Anika Atwal", title: "Deputy Director", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex26447", empType: "Full-time", kras: [
+        { title: "NPS", metric: "target - 50%", target: "60%" },
+        { title: "Avg rating", metric: "Events , target - 8", target: "20%" },
+        { title: "LMS", metric: "Health (Update,TAT), target - 100%", target: "5%" },
+        { title: "Learner Attendance", metric: "target - 70%", target: "5%" },
+        { title: "Cost of program delivery", metric: "target - 20%", target: "10%" }
+      ] },
+      { id: "ex28121", code: "28121", name: "Rishabh Sharma", title: "Associate Program Manager", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26309", empType: "Full-time", kras: [
+        { title: "Academic Delivery Excellence", metric: "target - 100%", target: "30%" },
+        { title: "Faculty cordination and support", metric: "target - 100%", target: "25%" },
+        { title: "Student communication and engagement", metric: "target >=95%", target: "20%" },
+        { title: "Academic Operations reporting", metric: "target - 100%", target: "15%" },
+        { title: "Student feedback management", metric: "target 100%", target: "10%" }
+      ] },
       { id: "ex30452", code: "30452", name: "Ishank Mehta", title: "Associate Director", dept: "d1", bu: "Executive Education", subDept: "Director's Office", managerId: "ex26447", empType: "Full-time", kras: [] },
-      { id: "ex28163", code: "28163", name: "Simran Hora", title: "Manager", dept: "d9", bu: "Executive Education", subDept: "B2B Enterprise", managerId: "ex27423", empType: "Full-time", kras: [] },
-      { id: "ex28170", code: "28170", name: "Priya Choudhary", title: "Senior Manager - I", dept: "d2", bu: "Executive Education", subDept: "Career Prep", managerId: "ex27423", empType: "Full-time", kras: [] },
-      { id: "ex28294", code: "28294", name: "Aryanshi Dubey", title: "Placement Manager - I", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27423", empType: "Full-time", kras: [] },
-      { id: "ex28329", code: "28329", name: "Rishabh Gupta", title: "Senior Manager - I", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex28120", empType: "Full-time", kras: [] },
-      { id: "ex28471", code: "28471", name: "Kumkum .", title: "Associate Program Manager", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26309", empType: "Full-time", kras: [] },
-      { id: "ex28464", code: "28464", name: "Riya Kumari Karn", title: "Senior Executive", dept: "d2", bu: "Executive Education", subDept: "Career Ops", managerId: "ex27423", empType: "Full-time", kras: [] },
-      { id: "ex28779", code: "28779", name: "Ishika Arora", title: "Associate Program Manager", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26270", empType: "Full-time", kras: [] },
-      { id: "ex28789", code: "28789", name: "Manya Kumari", title: "Associate Program Manager", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26309", empType: "Full-time", kras: [] },
-      { id: "ex28853", code: "28853", name: "Ashutosh Pandey", title: "Associate Program Manager", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26270", empType: "Full-time", kras: [] },
-      { id: "ex28894", code: "28894", name: "Shaily Singh", title: "Manager", dept: "d2", bu: "Executive Education", subDept: "Career Prep", managerId: "ex28170", empType: "Full-time", kras: [] },
+      { id: "ex28163", code: "28163", name: "Simran Hora", title: "Manager", dept: "d9", bu: "Executive Education", subDept: "B2B Enterprise", managerId: "ex27423", empType: "Full-time", kras: [
+        { title: "B2B revenue", metric: "Target - Rs 10 lakh / month", target: "100%" }
+      ] },
+      { id: "ex28170", code: "28170", name: "Priya Choudhary", title: "Senior Manager - I", dept: "d2", bu: "Executive Education", subDept: "Career Prep", managerId: "ex27423", empType: "Full-time", kras: [
+        { title: "R1 Clearance of assigned students based on Interviews aligned", metric: "target - 70%", target: "50%" },
+        { title: "Avg Class Rating", metric: "target 4.5", target: "50%" }
+      ] },
+      { id: "ex28294", code: "28294", name: "Aryanshi Dubey", title: "Placement Manager - I", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27423", empType: "Full-time", kras: [
+        { title: "Count of Students from Exec coursed placed", metric: "Target - 3", target: "70%" },
+        { title: "Average salary of students placed", metric: "9 LPA", target: "30%" }
+      ] },
+      { id: "ex28329", code: "28329", name: "Rishabh Gupta", title: "Senior Manager - I", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex28120", empType: "Full-time", kras: [
+        { title: "NPS", metric: "target - 50", target: "60%" },
+        { title: "Avg rating", metric: "Events, target - 8", target: "20%" },
+        { title: "LMS", metric: "Health (Update,TAT), target -100%", target: "5%" },
+        { title: "Learner Attendance", metric: "target - 70%", target: "5%" },
+        { title: "Cost of program delivery", metric: "target 20%", target: "10%" }
+      ] },
+      { id: "ex28471", code: "28471", name: "Kumkum .", title: "Associate Program Manager", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26309", empType: "Full-time", kras: [
+        { title: "Academic Delivery Excellence", metric: "target - 100%", target: "30%" },
+        { title: "Faculty cordination and support", metric: "target - 100%", target: "25%" },
+        { title: "Student communication and engagement", metric: "target >=95%", target: "20%" },
+        { title: "Academic Operations reporting", metric: "target - 100%", target: "15%" },
+        { title: "Student feedback management", metric: "target 100%", target: "10%" }
+      ] },
+      { id: "ex28464", code: "28464", name: "Riya Kumari Karn", title: "Senior Executive", dept: "d2", bu: "Executive Education", subDept: "Career Ops", managerId: "ex27423", empType: "Full-time", kras: [
+        { title: "Count of students from Exec course applying for the job floated vs their eligibility", metric: "target 60%", target: "60%" },
+        { title: "End to end completion of the drive", metric: "target - 100%", target: "40%" }
+      ] },
+      { id: "ex28779", code: "28779", name: "Ishika Arora", title: "Associate Program Manager", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26270", empType: "Full-time", kras: [
+        { title: "Academic Delivery Excellence", metric: "target - 100%", target: "30%" },
+        { title: "Faculty cordination and support", metric: "target - 100%", target: "25%" },
+        { title: "Student communication and engagement", metric: "target >=95%", target: "20%" },
+        { title: "Academic Operations reporting", metric: "target - 100%", target: "15%" },
+        { title: "Student feedback management", metric: "target 100%", target: "10%" }
+      ] },
+      { id: "ex28789", code: "28789", name: "Manya Kumari", title: "Associate Program Manager", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26309", empType: "Full-time", kras: [
+        { title: "Academic Delivery Excellence", metric: "target - 100%", target: "30%" },
+        { title: "Faculty cordination and support", metric: "target - 100%", target: "25%" },
+        { title: "Student communication and engagement", metric: "target >=95%", target: "20%" },
+        { title: "Academic Operations reporting", metric: "target - 100%", target: "15%" },
+        { title: "Student feedback management", metric: "target 100%", target: "10%" }
+      ] },
+      { id: "ex28853", code: "28853", name: "Ashutosh Pandey", title: "Associate Program Manager", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26270", empType: "Full-time", kras: [
+        { title: "Academic Delivery Excellence", metric: "target - 100%", target: "30%" },
+        { title: "Faculty cordination and support", metric: "target - 100%", target: "25%" },
+        { title: "Student communication and engagement", metric: "target >=95%", target: "20%" },
+        { title: "Academic Operations reporting", metric: "target - 100%", target: "15%" },
+        { title: "Student feedback management", metric: "target 100%", target: "10%" }
+      ] },
+      { id: "ex28894", code: "28894", name: "Shaily Singh", title: "Manager", dept: "d2", bu: "Executive Education", subDept: "Career Prep", managerId: "ex28170", empType: "Full-time", kras: [
+        { title: "R1 Clearance of assigned students based on Interviews aligned", metric: "target - 70%", target: "50%" },
+        { title: "Avg Class Rating", metric: "target 4.5", target: "50%" }
+      ] },
       { id: "ex28906", code: "28906", name: "Swapnil Dagur", title: "Senior Manager - I", dept: "c4", bu: "Executive Education", subDept: "Marketing", managerId: "ex26447", empType: "Full-time", kras: [] },
-      { id: "ex28945", code: "28945", name: "Yashashvi Sharma", title: "Manager", dept: "d2", bu: "Executive Education", subDept: "Career Prep", managerId: "ex28170", empType: "Full-time", kras: [] },
-      { id: "ex28983", code: "28983", name: "Umika Mongia", title: "Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex28120", empType: "Full-time", kras: [] },
+      { id: "ex28945", code: "28945", name: "Yashashvi Sharma", title: "Manager", dept: "d2", bu: "Executive Education", subDept: "Career Prep", managerId: "ex28170", empType: "Full-time", kras: [
+        { title: "R1 Clearance of assigned students based on Interviews aligned", metric: "target - 70%", target: "50%" },
+        { title: "Avg Class Rating", metric: "target 4.5", target: "50%" }
+      ] },
+      { id: "ex28983", code: "28983", name: "Umika Mongia", title: "Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex28120", empType: "Full-time", kras: [
+        { title: "NPS", metric: "target - 50", target: "60%" },
+        { title: "Avg rating", metric: "Events, target - 8", target: "20%" },
+        { title: "LMS", metric: "Health (Update,TAT), target -100%", target: "5%" },
+        { title: "Learner Attendance", metric: "target - 70%", target: "5%" },
+        { title: "Cost of program delivery", metric: "target 20%", target: "10%" }
+      ] },
       { id: "ex28807", code: "28807", name: "Tara Anand Kumar", title: "Associate Director", dept: "c4", bu: "Executive Education", subDept: "Leadership", managerId: "ex26447", empType: "Full-time", kras: [] },
-      { id: "ex29008", code: "29008", name: "Sarang Parashar", title: "Associate Program Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex29288", empType: "Full-time", kras: [] },
-      { id: "ex29026", code: "29026", name: "Aakriti Jaiswal", title: "Program Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex28120", empType: "Full-time", kras: [] },
+      { id: "ex29008", code: "29008", name: "Sarang Parashar", title: "Associate Program Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex29288", empType: "Full-time", kras: [
+        { title: "NPS", metric: "target - 50", target: "60%" },
+        { title: "Avg rating", metric: "Events, target - 8", target: "20%" },
+        { title: "LMS", metric: "Health (Update,TAT), target -100%", target: "5%" },
+        { title: "Learner Attendance", metric: "target - 70%", target: "5%" },
+        { title: "Cost of program delivery", metric: "target 20%", target: "10%" }
+      ] },
+      { id: "ex29026", code: "29026", name: "Aakriti Jaiswal", title: "Program Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex28120", empType: "Full-time", kras: [
+        { title: "NPS", metric: "target - 50", target: "60%" },
+        { title: "Avg rating", metric: "Events, target - 8", target: "20%" },
+        { title: "LMS", metric: "Health (Update,TAT), target -100%", target: "5%" },
+        { title: "Learner Attendance", metric: "target - 70%", target: "5%" },
+        { title: "Cost of program delivery", metric: "target 20%", target: "10%" }
+      ] },
       { id: "ex29014", code: "29014", name: "Shreyashi Bairagi", title: "Executive", dept: "c4", bu: "Executive Education", subDept: "Design", managerId: "cf27683", empType: "Full-time", kras: [] },
       { id: "ex29055", code: "29055", name: "Divya Bohra", title: "Executive", dept: "c4", bu: "Executive Education", subDept: "Design", managerId: "cf27683", empType: "Full-time", kras: [] },
-      { id: "ex29057", code: "29057", name: "Niharika.", title: "Program Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex27775", empType: "Full-time", kras: [] },
+      { id: "ex29057", code: "29057", name: "Niharika.", title: "Program Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex27775", empType: "Full-time", kras: [
+        { title: "NPS", metric: "target - 50", target: "60%" },
+        { title: "Avg rating", metric: "Events, target - 8", target: "20%" },
+        { title: "LMS", metric: "Health (Update,TAT), target -100%", target: "5%" },
+        { title: "Learner Attendance", metric: "target - 70%", target: "5%" },
+        { title: "Cost of program delivery", metric: "target 20%", target: "10%" }
+      ] },
       { id: "ex29072", code: "29072", name: "Manish Panchal", title: "Senior Executive", dept: "c4", bu: "Executive Education", subDept: "Design", managerId: "cf27683", empType: "Full-time", kras: [] },
-      { id: "ex29107", code: "29107", name: "Aditya Raj", title: "Executive", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26270", empType: "Full-time", kras: [] },
-      { id: "ex29130", code: "29130", name: "Riya Sehgal", title: "Senior Executive", dept: "d9", bu: "Executive Education", subDept: "B2B Enterprise", managerId: "cf28996", empType: "Full-time", kras: [] },
-      { id: "ex29227", code: "29227", name: "Muskaan Khanna", title: "General Manager", dept: "d9", bu: "Executive Education", subDept: "B2B Enterprise", managerId: "ex26447", empType: "Full-time", kras: [] },
-      { id: "ex29242", code: "29242", name: "Ashwat Jain", title: "Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex28120", empType: "Full-time", kras: [] },
-      { id: "ex29288", code: "29288", name: "Noopur Maheshwari", title: "Deputy Director", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex26447", empType: "Full-time", kras: [] },
-      { id: "ex29393", code: "29393", name: "Priyanshi Verma", title: "Manager", dept: "c4", bu: "Executive Education", subDept: "Marketing", managerId: "ex28807", empType: "Full-time", kras: [] },
-      { id: "ex29369", code: "29369", name: "Himanshu Kumar", title: "Associate", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26270", empType: "Full-time", kras: [] },
-      { id: "ex29442", code: "29442", name: "Shashank Kushwaha", title: "Associate", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26270", empType: "Full-time", kras: [] },
-      { id: "ex29476", code: "29476", name: "Diksha Goklani", title: "Manager", dept: "c4", bu: "Executive Education", subDept: "Marketing", managerId: "ex28807", empType: "Full-time", kras: [] },
-      { id: "ex29532", code: "29532", name: "Tista Talwar", title: "Manager", dept: "d9", bu: "Executive Education", subDept: "B2B Enterprise", managerId: "ex27423", empType: "Full-time", kras: [] },
-      { id: "ex29519", code: "29519", name: "Sunil Sharma", title: "Associate", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26270", empType: "Full-time", kras: [] },
-      { id: "ex27423", code: "27423", name: "Gaurav Kumar Sharma", title: "Associate Director", dept: "d2", bu: "Executive Education", subDept: "Leadership", managerId: "ex26447", empType: "Full-time", kras: [] },
-      { id: "ex29575", code: "29575", name: "Vidhi", title: "Executive", dept: "d2", bu: "Executive Education", subDept: "Career Ops", managerId: "ex27423", empType: "Full-time", kras: [] },
-      { id: "ex29589", code: "29589", name: "Anushka Biswas", title: "Associate", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26270", empType: "Full-time", kras: [] },
-      { id: "ex29710", code: "29710", name: "Divya Dagar", title: "Program Associate", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26309", empType: "Full-time", kras: [] },
-      { id: "ex29715", code: "29715", name: "Gursimran Kaur", title: "Senior Manager - I", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex27762", empType: "Full-time", kras: [] },
-      { id: "ex29722", code: "29722", name: "Rishabh Singla", title: "Program Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex29288", empType: "Full-time", kras: [] },
+      { id: "ex29107", code: "29107", name: "Aditya Raj", title: "Executive", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26270", empType: "Full-time", kras: [
+        { title: "Academic Delivery Excellence", metric: "target - 100%", target: "30%" },
+        { title: "Faculty cordination and support", metric: "target - 100%", target: "25%" },
+        { title: "Student communication and engagement", metric: "target >=95%", target: "20%" },
+        { title: "Academic Operations reporting", metric: "target - 100%", target: "15%" },
+        { title: "Student feedback management", metric: "target 100%", target: "10%" }
+      ] },
+      { id: "ex29130", code: "29130", name: "Riya Sehgal", title: "Senior Executive", dept: "d9", bu: "Executive Education", subDept: "B2B Enterprise", managerId: "cf28996", empType: "Full-time", kras: [
+        { title: "Revenue from B2B workshop", metric: "target - 5Lakh", target: "100%" }
+      ] },
+      { id: "ex29227", code: "29227", name: "Muskaan Khanna", title: "General Manager", dept: "d9", bu: "Executive Education", subDept: "B2B Enterprise", managerId: "ex26447", empType: "Full-time", kras: [
+        { title: "B2B revenue", metric: "Target - Rs 25 lakh / month", target: "100%" }
+      ] },
+      { id: "ex29242", code: "29242", name: "Ashwat Jain", title: "Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex28120", empType: "Full-time", kras: [
+        { title: "NPS", metric: "target - 50", target: "60%" },
+        { title: "Avg rating", metric: "Events, target - 8", target: "20%" },
+        { title: "LMS", metric: "Health (Update,TAT), target -100%", target: "5%" },
+        { title: "Learner Attendance", metric: "target - 70%", target: "5%" },
+        { title: "Cost of program delivery", metric: "target 20%", target: "10%" }
+      ] },
+      { id: "ex29288", code: "29288", name: "Noopur Maheshwari", title: "Deputy Director", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex26447", empType: "Full-time", kras: [
+        { title: "NPS", metric: "target - 50%", target: "60%" },
+        { title: "Avg rating", metric: "Events , target - 8", target: "20%" },
+        { title: "LMS", metric: "Health (Update,TAT), target - 100%", target: "5%" },
+        { title: "Learner Attendance", metric: "target - 70%", target: "5%" },
+        { title: "Cost of program delivery", metric: "target - 20%", target: "10%" }
+      ] },
+      { id: "ex29393", code: "29393", name: "Priyanshi Verma", title: "Manager", dept: "c4", bu: "Executive Education", subDept: "Marketing", managerId: "ex28807", empType: "Full-time", kras: [
+        { title: "Programme Drip Campaigns", metric: "Write and optimise webinar, drip, and all communication journeys across programmes.", target: "30%" },
+        { title: "100% Deadline Communications", metric: "Own deadline communications and coordinate with programme managers.", target: "20%" },
+        { title: "Programme Content", metric: "Create brochures, launch communications, website copy, FAQs and emailers.", target: "25%" },
+        { title: "Campaign Copy Quality", metric: "Maintain brand voice across ads, PR, events and campaign communications.", target: "25%" }
+      ] },
+      { id: "ex29369", code: "29369", name: "Himanshu Kumar", title: "Associate", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26270", empType: "Full-time", kras: [
+        { title: "Academic Delivery Excellence", metric: "target - 100%", target: "30%" },
+        { title: "Faculty cordination and support", metric: "target - 100%", target: "25%" },
+        { title: "Student communication and engagement", metric: "target >=95%", target: "20%" },
+        { title: "Academic Operations reporting", metric: "target - 100%", target: "15%" },
+        { title: "Student feedback management", metric: "target 100%", target: "10%" }
+      ] },
+      { id: "ex29442", code: "29442", name: "Shashank Kushwaha", title: "Associate", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26270", empType: "Full-time", kras: [
+        { title: "Academic Delivery Excellence", metric: "target - 100%", target: "30%" },
+        { title: "Faculty cordination and support", metric: "target - 100%", target: "25%" },
+        { title: "Student communication and engagement", metric: "target >=95%", target: "20%" },
+        { title: "Academic Operations reporting", metric: "target - 100%", target: "15%" },
+        { title: "Student feedback management", metric: "target 100%", target: "10%" }
+      ] },
+      { id: "ex29476", code: "29476", name: "Diksha Goklani", title: "Manager", dept: "c4", bu: "Executive Education", subDept: "Marketing", managerId: "ex28807", empType: "Full-time", kras: [
+        { title: "7 Webinars/Week", metric: "Execute webinars, manage speakers, registrations and launch support.", target: "35%" },
+        { title: "100% Webinar Reporting", metric: "Share webinar reports within 3 working days and weekly leadership summaries.", target: "20%" },
+        { title: "B2B Marketing Delivery", metric: "Own B2B landing pages, collateral and campaign coordination.", target: "25%" },
+        { title: "Capital Markets Content", metric: "Deliver programme Ips like Daily/Weekly Market Wrap and newer IPs .", target: "20%" }
+      ] },
+      { id: "ex29532", code: "29532", name: "Tista Talwar", title: "Manager", dept: "d9", bu: "Executive Education", subDept: "B2B Enterprise", managerId: "ex27423", empType: "Full-time", kras: [
+        { title: "Count of Students from Exec coursed placed", metric: "Target - 3", target: "70%" },
+        { title: "Average salary of students placed", metric: "9 LPA", target: "30%" }
+      ] },
+      { id: "ex29519", code: "29519", name: "Sunil Sharma", title: "Associate", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26270", empType: "Full-time", kras: [
+        { title: "Academic Delivery Excellence", metric: "target - 100%", target: "30%" },
+        { title: "Faculty cordination and support", metric: "target - 100%", target: "25%" },
+        { title: "Student communication and engagement", metric: "target >=95%", target: "20%" },
+        { title: "Academic Operations reporting", metric: "target - 100%", target: "15%" },
+        { title: "Student feedback management", metric: "target 100%", target: "10%" }
+      ] },
+      { id: "ex27423", code: "27423", name: "Gaurav Kumar Sharma", title: "Associate Director", dept: "d2", bu: "Executive Education", subDept: "Leadership", managerId: "ex26447", empType: "Full-time", kras: [
+        { title: "B2B revenue", metric: "Target - Rs 50 lakh / month", target: "50%" },
+        { title: "SBM Placement", metric: "10 SBM Placement/month", target: "50%" }
+      ] },
+      { id: "ex29575", code: "29575", name: "Vidhi", title: "Executive", dept: "d2", bu: "Executive Education", subDept: "Career Ops", managerId: "ex27423", empType: "Full-time", kras: [
+        { title: "Count of students from Exec course applying for the job floated vs their eligibility", metric: "target 60%", target: "60%" },
+        { title: "End to end completion of the drive", metric: "target - 100%", target: "40%" }
+      ] },
+      { id: "ex29589", code: "29589", name: "Anushka Biswas", title: "Associate", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26270", empType: "Full-time", kras: [
+        { title: "Academic Delivery Excellence", metric: "target - 100%", target: "30%" },
+        { title: "Faculty cordination and support", metric: "target - 100%", target: "25%" },
+        { title: "Student communication and engagement", metric: "target >=95%", target: "20%" },
+        { title: "Academic Operations reporting", metric: "target - 100%", target: "15%" },
+        { title: "Student feedback management", metric: "target 100%", target: "10%" }
+      ] },
+      { id: "ex29710", code: "29710", name: "Divya Dagar", title: "Program Associate", dept: "d4", bu: "Executive Education", subDept: "Academics Ops", managerId: "ex26309", empType: "Full-time", kras: [
+        { title: "Academic Delivery Excellence", metric: "target - 100%", target: "30%" },
+        { title: "Faculty cordination and support", metric: "target - 100%", target: "25%" },
+        { title: "Student communication and engagement", metric: "target >=95%", target: "20%" },
+        { title: "Academic Operations reporting", metric: "target - 100%", target: "15%" },
+        { title: "Student feedback management", metric: "target 100%", target: "10%" }
+      ] },
+      { id: "ex29715", code: "29715", name: "Gursimran Kaur", title: "Senior Manager - I", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex27762", empType: "Full-time", kras: [
+        { title: "NPS", metric: "target - 50", target: "60%" },
+        { title: "Avg rating", metric: "Events, target - 8", target: "20%" },
+        { title: "LMS", metric: "Health (Update,TAT), target -100%", target: "5%" },
+        { title: "Learner Attendance", metric: "target - 70%", target: "5%" },
+        { title: "Cost of program delivery", metric: "target 20%", target: "10%" }
+      ] },
+      { id: "ex29722", code: "29722", name: "Rishabh Singla", title: "Program Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex29288", empType: "Full-time", kras: [
+        { title: "NPS", metric: "target - 50", target: "60%" },
+        { title: "Avg rating", metric: "Events, target - 8", target: "20%" },
+        { title: "LMS", metric: "Health (Update,TAT), target -100%", target: "5%" },
+        { title: "Learner Attendance", metric: "target - 70%", target: "5%" },
+        { title: "Cost of program delivery", metric: "target 20%", target: "10%" }
+      ] },
       { id: "ex29745", code: "29745", name: "Silvy Kalra", title: "General Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex26447", empType: "Full-time", kras: [] },
-      { id: "ex29848", code: "29848", name: "Suman Dubey", title: "Program Associate", dept: "d2", bu: "Executive Education", subDept: "Career Ops", managerId: "ex27423", empType: "Full-time", kras: [] },
-      { id: "ex29907", code: "29907", name: "Yashvi Modi", title: "Associate", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27628", empType: "Full-time", kras: [] },
-      { id: "ex30010", code: "30010", name: "Anamika Mani", title: "Program Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex27762", empType: "Full-time", kras: [] },
-      { id: "ex30125", code: "30125", name: "Aparajita Tiwari", title: "Senior Manager - I", dept: "c4", bu: "Executive Education", subDept: "Marketing", managerId: "ex28807", empType: "Full-time", kras: [] },
-      { id: "ex30248", code: "30248", name: "Gagandeep Singh", title: "Program Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex27762", empType: "Full-time", kras: [] },
+      { id: "ex29848", code: "29848", name: "Suman Dubey", title: "Program Associate", dept: "d2", bu: "Executive Education", subDept: "Career Ops", managerId: "ex27423", empType: "Full-time", kras: [
+        { title: "Count of students from Exec course applying for the job floated vs their eligibility", metric: "target 60%", target: "60%" },
+        { title: "End to end completion of the drive", metric: "target - 100%", target: "40%" }
+      ] },
+      { id: "ex29907", code: "29907", name: "Yashvi Modi", title: "Associate", dept: "d2", bu: "Executive Education", subDept: "Outreach", managerId: "ex27628", empType: "Full-time", kras: [
+        { title: "Count of Students from Exec coursed placed", metric: "Target - 3", target: "70%" },
+        { title: "Average salary of students placed", metric: "9 LPA", target: "30%" }
+      ] },
+      { id: "ex30010", code: "30010", name: "Anamika Mani", title: "Program Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex27762", empType: "Full-time", kras: [
+        { title: "NPS", metric: "target - 50", target: "60%" },
+        { title: "Avg rating", metric: "Events, target - 8", target: "20%" },
+        { title: "LMS", metric: "Health (Update,TAT), target -100%", target: "5%" },
+        { title: "Learner Attendance", metric: "target - 70%", target: "5%" },
+        { title: "Cost of program delivery", metric: "target 20%", target: "10%" }
+      ] },
+      { id: "ex30125", code: "30125", name: "Aparajita Tiwari", title: "Senior Manager - I", dept: "c4", bu: "Executive Education", subDept: "Marketing", managerId: "ex28807", empType: "Full-time", kras: [
+        { title: "Deliver campaign assets and execute programme launches on schedule while coordinating cross-functional marketing execution.", metric: "100% On-time Campaign Launches", target: "30%" },
+        { title: "Create, refresh and optimise static ad creatives and maintain a structured ad repository.", metric: "Ad Creative Excellence", target: "25%" },
+        { title: "Develop and execute LinkedIn and Facebook strategy for Executive Education.", metric: "Social Media Strategy", target: "30%" },
+        { title: "Drive brand collaborations and oversee online reputation management.", metric: "6–8 Brand Partnerships", target: "15%" }
+      ] },
+      { id: "ex30248", code: "30248", name: "Gagandeep Singh", title: "Program Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex27762", empType: "Full-time", kras: [
+        { title: "NPS", metric: "target - 50", target: "60%" },
+        { title: "Avg rating", metric: "Events, target - 8", target: "20%" },
+        { title: "LMS", metric: "Health (Update,TAT), target -100%", target: "5%" },
+        { title: "Learner Attendance", metric: "target - 70%", target: "5%" },
+        { title: "Cost of program delivery", metric: "target 20%", target: "10%" }
+      ] },
       { id: "ex30600", code: "30600", name: "Ashish", title: "Program Manager", dept: "d7", bu: "Executive Education", subDept: "Delivery", managerId: "ex27762", empType: "Full-time", kras: [] },
       { id: "ex30590", code: "30590", name: "Bhanu Valecha", title: "Manager", dept: "c4", bu: "Executive Education", subDept: "Performance Marketing", managerId: "cf28315", empType: "Full-time", kras: [] },
       { id: "ex30680", code: "30680", name: "Janpreet Singh Chawla", title: "Senior Manager - I", dept: "c4", bu: "Executive Education", subDept: "Performance Marketing", managerId: "cf28315", empType: "Full-time", kras: [] },

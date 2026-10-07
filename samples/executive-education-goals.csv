@@ -1,0 +1,254 @@
+personId,personName,title,target,metric
+ex26132,Vikas Singha,Revenue,70%,8.5 Lakh ARPS
+ex26132,Vikas Singha,Attrition,20%,< 12% Attrition
+ex26132,Vikas Singha,Adherence to the Sales Policy,10%,100% adherence to sales process
+ex27477,Akshay Dhall,Revenue,70%,8.5 Lakh ARPS
+ex27477,Akshay Dhall,Attrition,20%,< 12% Attrition
+ex27477,Akshay Dhall,Adherence to the Sales Policy,10%,100% adherence to sales process
+ex29438,Vishwanath Nair,Revenue,70%,8.5 Lakh ARPS
+ex29438,Vishwanath Nair,Attrition,20%,< 12% Attrition
+ex29438,Vishwanath Nair,Adherence to the Sales Policy,10%,100% adherence to sales process
+ex27510,Abhishek Ghosh,Revenue,70%,8.5 Lakh ARPS
+ex27510,Abhishek Ghosh,Attrition,20%,< 12% Attrition
+ex27510,Abhishek Ghosh,Adherence to the Sales Policy,10%,100% adherence to sales process
+ex29545,Ratan Anmol Sethi,Revenue,70%,8.5 Lakh ARPS
+ex29545,Ratan Anmol Sethi,Attrition,20%,< 12% Attrition
+ex29545,Ratan Anmol Sethi,Adherence to the Sales Policy,10%,100% adherence to sales process
+ex28144,Rohit Walia,Revenue,70%,8.5 Lakh ARPS
+ex28144,Rohit Walia,Attrition,20%,< 12% Attrition
+ex28144,Rohit Walia,Adherence to the Sales Policy,10%,100% adherence to sales process
+ex28823,Maria Joseph Sampath Kumar,Revenue,70%,8.5 Lakh ARPS
+ex28823,Maria Joseph Sampath Kumar,Attrition,20%,< 12% Attrition
+ex28823,Maria Joseph Sampath Kumar,Adherence to the Sales Policy,10%,100% adherence to sales process
+ex28858,Prapat Saxena,Revenue,70%,8.5 Lakh ARPS
+ex28858,Prapat Saxena,Attrition,20%,< 12% Attrition
+ex28858,Prapat Saxena,Adherence to the Sales Policy,10%,100% adherence to sales process
+ex28982,Kashyap Kapoor,Revenue,70%,8.5 Lakh ARPS
+ex28982,Kashyap Kapoor,Attrition,20%,< 12% Attrition
+ex28982,Kashyap Kapoor,Adherence to the Sales Policy,10%,100% adherence to sales process
+ex29100,Akash Tripathi,Revenue,70%,8.5 Lakh ARPS
+ex29100,Akash Tripathi,Attrition,20%,< 12% Attrition
+ex29100,Akash Tripathi,Adherence to the Sales Policy,10%,100% adherence to sales process
+ex29588,Yajan Chopra,Revenue,70%,8.5 Lakh ARPS
+ex29588,Yajan Chopra,Attrition,20%,< 12% Attrition
+ex29588,Yajan Chopra,Adherence to the Sales Policy,10%,100% adherence to sales process
+ex29743,Junaid Shaikh,Revenue,70%,8.5 Lakh ARPS
+ex29743,Junaid Shaikh,Attrition,20%,< 12% Attrition
+ex29743,Junaid Shaikh,Adherence to the Sales Policy,10%,100% adherence to sales process
+ex29777,Aman Kumar,Revenue,70%,8.5 Lakh ARPS
+ex29777,Aman Kumar,Attrition,20%,< 12% Attrition
+ex29777,Aman Kumar,Adherence to the Sales Policy,10%,100% adherence to sales process
+ex29829,Riddhi Mukherjee,Revenue,70%,8.5 Lakh ARPS
+ex29829,Riddhi Mukherjee,Attrition,20%,< 12% Attrition
+ex29829,Riddhi Mukherjee,Adherence to the Sales Policy,10%,100% adherence to sales process
+ex30246,Robert Johnson,Revenue,70%,8.5 Lakh ARPS
+ex30246,Robert Johnson,Attrition,20%,< 12% Attrition
+ex30246,Robert Johnson,Adherence to the Sales Policy,10%,100% adherence to sales process
+ex26206,Srishti Kush,Revenue Realised,100%,Revenue Realised per month 15 Cr.
+ex26304,Nirbhay Daniel Singh,New hires trainined within onboarding timeline,50%,target 1005
+ex26304,Nirbhay Daniel Singh,New joiners achieveing 1st sale within 30 days,100%,target - 20%
+ex28004,Harjeet Singh,Adherence to Inbound Channels,100%,Adherence to Inbound Channels (Chat/Voice)
+ex28145,Shivam Shekhar,Data Management,100%,Adherence to all data management task
+ex28313,Himanshu Kumar Dubey,Revenue Realised,100%,Revenue Realised per month 15 Cr.
+ex28667,Gurpreet Kaur,Revenue Realised,100%,Revenue Realised per month 15 Cr.
+ex29174,Neeraj Singh,Adherence to Inbound Channels,100%,Adherence to Inbound Channels (Chat/Voice)
+ex29766,Arun Arya,Data Management,100%,Adherence to all data management task
+ex30055,Souvik Deb,Adherence to all data management task,100%,
+ex26270,Aarti Sharma,Designing and Executing new curriculam,25%,Designing and Executing new curriculam
+ex26270,Aarti Sharma,Managing end-to-end academics for dedicated programs,25%,Managing end-to-end academics for dedicated programs
+ex26270,Aarti Sharma,Ensuring class feedback for the program,25%,Ensuring class feedback (4.5+) for the program
+ex26270,Aarti Sharma,Tracking learner progression and successful program completion,10%,Tracking learner progression and successful program completion
+ex26270,Aarti Sharma,Maintaining Teaching feedback,15%,Maintaining Teaching feedback (4.5+)
+ex26309,Rinku Mahindru,Designing and Executing new curriculam,25%,Designing and Executing new curriculam
+ex26309,Rinku Mahindru,Managing end-to-end academics for dedicated programs,25%,Managing end-to-end academics for dedicated programs
+ex26309,Rinku Mahindru,Ensuring class feedback for the program,25%,Ensuring class feedback (4.5+) for the program
+ex26309,Rinku Mahindru,Tracking learner progression and successful program completion,10%,Tracking learner progression and successful program completion
+ex26309,Rinku Mahindru,Maintaining Teaching feedback,15%,Maintaining Teaching feedback (4.5+)
+ex26327,Puneet Satija,Count of Students from Exec coursed placed,70%,Target - 3
+ex26327,Puneet Satija,Average salary of students placed,30%,9 LPA
+ex26328,Garvit Gupta,Count of Students from Exec coursed placed,70%,Target - 3
+ex26328,Garvit Gupta,Average salary of students placed,30%,9 LPA
+ex26448,Karan Singh,Revenue Realised,90%,target 15 Cr. per month
+ex26448,Karan Singh,Adherence to the defined sales process (%).,10%,target 100%
+ex27371,Shruti Gulati,Count of Students from Exec coursed placed,70%,Target - 3
+ex27371,Shruti Gulati,Average salary of students placed,30%,9 LPA
+ex27385,Shubika Sharma,Execute Email and WhatsApp campaigns on schedule.,35%,100% Campaign Operations
+ex27385,Shubika Sharma,Set up webinars and execute webinar communications.,25%,Webinar Operations
+ex27385,Shubika Sharma,Coordinate Central Marketing requests and on-ground execution.,30%,Cross-functional Coordination
+ex27385,Shubika Sharma,"Maintain trackers, documentation and SOPs.",10%,Process Documentation
+ex27394,Aishwarya Lakshman,Count of Students from Exec coursed placed,70%,Target - 3
+ex27394,Aishwarya Lakshman,Average salary of students placed,30%,9 LPA
+ex27478,Anshu Kapoor,Count of Students from Exec coursed placed,70%,Target - 3
+ex27478,Anshu Kapoor,Average salary of students placed,30%,9 LPA
+ex27483,Anish Tripathi,Count of students from Exec course applying for the job floated vs their eligibility,60%,target 60%
+ex27483,Anish Tripathi,End to end completion of the drive,40%,target - 100%
+ex27628,Parimal Mandal,Count of Students from Exec coursed placed,70%,Target - 3
+ex27628,Parimal Mandal,Average salary of students placed,30%,9 LPA
+ex27762,Priyam Bansal,NPS,60%,target - 50%
+ex27762,Priyam Bansal,Avg rating,20%,"Events , target - 8"
+ex27762,Priyam Bansal,LMS,5%,"Health (Update,TAT), target - 100%"
+ex27762,Priyam Bansal,Learner Attendance,5%,target - 70%
+ex27762,Priyam Bansal,Cost of program delivery,10%,target - 20%
+ex27775,Abhishek Gaur,NPS,60%,target - 50
+ex27775,Abhishek Gaur,Avg rating,20%,"Events, target - 8"
+ex27775,Abhishek Gaur,LMS,5%,"Health (Update,TAT), target -100%"
+ex27775,Abhishek Gaur,Learner Attendance,5%,target - 70%
+ex27775,Abhishek Gaur,Cost of program delivery,10%,target 20%
+ex27986,Nishi Rai,Count of Students from Exec coursed placed,70%,Target - 3
+ex27986,Nishi Rai,Average salary of students placed,30%,9 LPA
+ex28032,Ashmi V Tom,Count of students from Exec course applying for the job floated vs their eligibility,60%,target 60%
+ex28032,Ashmi V Tom,End to end completion of the drive,40%,target - 100%
+ex28082,Swati Punia,B2B revenue,100%,Target - Rs 10 lakh / month
+ex28096,Ritika Raviprakash Prasad,B2B revenue,100%,Target - Rs 10 lakh / month
+ex28106,Reshab Bhargav,Count of Students from Exec coursed placed,70%,Target - 3
+ex28106,Reshab Bhargav,Average salary of students placed,30%,9 LPA
+ex28120,Anika Atwal,NPS,60%,target - 50%
+ex28120,Anika Atwal,Avg rating,20%,"Events , target - 8"
+ex28120,Anika Atwal,LMS,5%,"Health (Update,TAT), target - 100%"
+ex28120,Anika Atwal,Learner Attendance,5%,target - 70%
+ex28120,Anika Atwal,Cost of program delivery,10%,target - 20%
+ex28121,Rishabh Sharma,Academic Delivery Excellence,30%,target - 100%
+ex28121,Rishabh Sharma,Faculty cordination and support,25%,target - 100%
+ex28121,Rishabh Sharma,Student communication and engagement,20%,target >=95%
+ex28121,Rishabh Sharma,Academic Operations reporting,15%,target - 100%
+ex28121,Rishabh Sharma,Student feedback management,10%,target 100%
+ex28163,Simran Hora,B2B revenue,100%,Target - Rs 10 lakh / month
+ex28170,Priya Choudhary,R1 Clearance of assigned students based on Interviews aligned,50%,target - 70%
+ex28170,Priya Choudhary,Avg Class Rating,50%,target 4.5
+ex28294,Aryanshi Dubey,Count of Students from Exec coursed placed,70%,Target - 3
+ex28294,Aryanshi Dubey,Average salary of students placed,30%,9 LPA
+ex28329,Rishabh Gupta,NPS,60%,target - 50
+ex28329,Rishabh Gupta,Avg rating,20%,"Events, target - 8"
+ex28329,Rishabh Gupta,LMS,5%,"Health (Update,TAT), target -100%"
+ex28329,Rishabh Gupta,Learner Attendance,5%,target - 70%
+ex28329,Rishabh Gupta,Cost of program delivery,10%,target 20%
+ex28471,Kumkum .,Academic Delivery Excellence,30%,target - 100%
+ex28471,Kumkum .,Faculty cordination and support,25%,target - 100%
+ex28471,Kumkum .,Student communication and engagement,20%,target >=95%
+ex28471,Kumkum .,Academic Operations reporting,15%,target - 100%
+ex28471,Kumkum .,Student feedback management,10%,target 100%
+ex28464,Riya Kumari Karn,Count of students from Exec course applying for the job floated vs their eligibility,60%,target 60%
+ex28464,Riya Kumari Karn,End to end completion of the drive,40%,target - 100%
+ex28779,Ishika Arora,Academic Delivery Excellence,30%,target - 100%
+ex28779,Ishika Arora,Faculty cordination and support,25%,target - 100%
+ex28779,Ishika Arora,Student communication and engagement,20%,target >=95%
+ex28779,Ishika Arora,Academic Operations reporting,15%,target - 100%
+ex28779,Ishika Arora,Student feedback management,10%,target 100%
+ex28789,Manya Kumari,Academic Delivery Excellence,30%,target - 100%
+ex28789,Manya Kumari,Faculty cordination and support,25%,target - 100%
+ex28789,Manya Kumari,Student communication and engagement,20%,target >=95%
+ex28789,Manya Kumari,Academic Operations reporting,15%,target - 100%
+ex28789,Manya Kumari,Student feedback management,10%,target 100%
+ex28853,Ashutosh Pandey,Academic Delivery Excellence,30%,target - 100%
+ex28853,Ashutosh Pandey,Faculty cordination and support,25%,target - 100%
+ex28853,Ashutosh Pandey,Student communication and engagement,20%,target >=95%
+ex28853,Ashutosh Pandey,Academic Operations reporting,15%,target - 100%
+ex28853,Ashutosh Pandey,Student feedback management,10%,target 100%
+ex28894,Shaily Singh,R1 Clearance of assigned students based on Interviews aligned,50%,target - 70%
+ex28894,Shaily Singh,Avg Class Rating,50%,target 4.5
+ex28945,Yashashvi Sharma,R1 Clearance of assigned students based on Interviews aligned,50%,target - 70%
+ex28945,Yashashvi Sharma,Avg Class Rating,50%,target 4.5
+ex28983,Umika Mongia,NPS,60%,target - 50
+ex28983,Umika Mongia,Avg rating,20%,"Events, target - 8"
+ex28983,Umika Mongia,LMS,5%,"Health (Update,TAT), target -100%"
+ex28983,Umika Mongia,Learner Attendance,5%,target - 70%
+ex28983,Umika Mongia,Cost of program delivery,10%,target 20%
+ex29008,Sarang Parashar,NPS,60%,target - 50
+ex29008,Sarang Parashar,Avg rating,20%,"Events, target - 8"
+ex29008,Sarang Parashar,LMS,5%,"Health (Update,TAT), target -100%"
+ex29008,Sarang Parashar,Learner Attendance,5%,target - 70%
+ex29008,Sarang Parashar,Cost of program delivery,10%,target 20%
+ex29026,Aakriti Jaiswal,NPS,60%,target - 50
+ex29026,Aakriti Jaiswal,Avg rating,20%,"Events, target - 8"
+ex29026,Aakriti Jaiswal,LMS,5%,"Health (Update,TAT), target -100%"
+ex29026,Aakriti Jaiswal,Learner Attendance,5%,target - 70%
+ex29026,Aakriti Jaiswal,Cost of program delivery,10%,target 20%
+ex29057,Niharika.,NPS,60%,target - 50
+ex29057,Niharika.,Avg rating,20%,"Events, target - 8"
+ex29057,Niharika.,LMS,5%,"Health (Update,TAT), target -100%"
+ex29057,Niharika.,Learner Attendance,5%,target - 70%
+ex29057,Niharika.,Cost of program delivery,10%,target 20%
+ex29107,Aditya Raj,Academic Delivery Excellence,30%,target - 100%
+ex29107,Aditya Raj,Faculty cordination and support,25%,target - 100%
+ex29107,Aditya Raj,Student communication and engagement,20%,target >=95%
+ex29107,Aditya Raj,Academic Operations reporting,15%,target - 100%
+ex29107,Aditya Raj,Student feedback management,10%,target 100%
+ex29130,Riya Sehgal,Revenue from B2B workshop,100%,target - 5Lakh
+ex29227,Muskaan Khanna,B2B revenue,100%,Target - Rs 25 lakh / month
+ex29242,Ashwat Jain,NPS,60%,target - 50
+ex29242,Ashwat Jain,Avg rating,20%,"Events, target - 8"
+ex29242,Ashwat Jain,LMS,5%,"Health (Update,TAT), target -100%"
+ex29242,Ashwat Jain,Learner Attendance,5%,target - 70%
+ex29242,Ashwat Jain,Cost of program delivery,10%,target 20%
+ex29288,Noopur Maheshwari,NPS,60%,target - 50%
+ex29288,Noopur Maheshwari,Avg rating,20%,"Events , target - 8"
+ex29288,Noopur Maheshwari,LMS,5%,"Health (Update,TAT), target - 100%"
+ex29288,Noopur Maheshwari,Learner Attendance,5%,target - 70%
+ex29288,Noopur Maheshwari,Cost of program delivery,10%,target - 20%
+ex29393,Priyanshi Verma,Programme Drip Campaigns,30%,"Write and optimise webinar, drip, and all communication journeys across programmes."
+ex29393,Priyanshi Verma,100% Deadline Communications,20%,Own deadline communications and coordinate with programme managers.
+ex29393,Priyanshi Verma,Programme Content,25%,"Create brochures, launch communications, website copy, FAQs and emailers."
+ex29393,Priyanshi Verma,Campaign Copy Quality,25%,"Maintain brand voice across ads, PR, events and campaign communications."
+ex29369,Himanshu Kumar,Academic Delivery Excellence,30%,target - 100%
+ex29369,Himanshu Kumar,Faculty cordination and support,25%,target - 100%
+ex29369,Himanshu Kumar,Student communication and engagement,20%,target >=95%
+ex29369,Himanshu Kumar,Academic Operations reporting,15%,target - 100%
+ex29369,Himanshu Kumar,Student feedback management,10%,target 100%
+ex29442,Shashank Kushwaha,Academic Delivery Excellence,30%,target - 100%
+ex29442,Shashank Kushwaha,Faculty cordination and support,25%,target - 100%
+ex29442,Shashank Kushwaha,Student communication and engagement,20%,target >=95%
+ex29442,Shashank Kushwaha,Academic Operations reporting,15%,target - 100%
+ex29442,Shashank Kushwaha,Student feedback management,10%,target 100%
+ex29476,Diksha Goklani,7 Webinars/Week,35%,"Execute webinars, manage speakers, registrations and launch support."
+ex29476,Diksha Goklani,100% Webinar Reporting,20%,Share webinar reports within 3 working days and weekly leadership summaries.
+ex29476,Diksha Goklani,B2B Marketing Delivery,25%,"Own B2B landing pages, collateral and campaign coordination."
+ex29476,Diksha Goklani,Capital Markets Content,20%,Deliver programme Ips like Daily/Weekly Market Wrap and newer IPs .
+ex29532,Tista Talwar,Count of Students from Exec coursed placed,70%,Target - 3
+ex29532,Tista Talwar,Average salary of students placed,30%,9 LPA
+ex29519,Sunil Sharma,Academic Delivery Excellence,30%,target - 100%
+ex29519,Sunil Sharma,Faculty cordination and support,25%,target - 100%
+ex29519,Sunil Sharma,Student communication and engagement,20%,target >=95%
+ex29519,Sunil Sharma,Academic Operations reporting,15%,target - 100%
+ex29519,Sunil Sharma,Student feedback management,10%,target 100%
+ex27423,Gaurav Kumar Sharma,B2B revenue,50%,Target - Rs 50 lakh / month
+ex27423,Gaurav Kumar Sharma,SBM Placement,50%,10 SBM Placement/month
+ex29575,Vidhi,Count of students from Exec course applying for the job floated vs their eligibility,60%,target 60%
+ex29575,Vidhi,End to end completion of the drive,40%,target - 100%
+ex29589,Anushka Biswas,Academic Delivery Excellence,30%,target - 100%
+ex29589,Anushka Biswas,Faculty cordination and support,25%,target - 100%
+ex29589,Anushka Biswas,Student communication and engagement,20%,target >=95%
+ex29589,Anushka Biswas,Academic Operations reporting,15%,target - 100%
+ex29589,Anushka Biswas,Student feedback management,10%,target 100%
+ex29710,Divya Dagar,Academic Delivery Excellence,30%,target - 100%
+ex29710,Divya Dagar,Faculty cordination and support,25%,target - 100%
+ex29710,Divya Dagar,Student communication and engagement,20%,target >=95%
+ex29710,Divya Dagar,Academic Operations reporting,15%,target - 100%
+ex29710,Divya Dagar,Student feedback management,10%,target 100%
+ex29715,Gursimran Kaur,NPS,60%,target - 50
+ex29715,Gursimran Kaur,Avg rating,20%,"Events, target - 8"
+ex29715,Gursimran Kaur,LMS,5%,"Health (Update,TAT), target -100%"
+ex29715,Gursimran Kaur,Learner Attendance,5%,target - 70%
+ex29715,Gursimran Kaur,Cost of program delivery,10%,target 20%
+ex29722,Rishabh Singla,NPS,60%,target - 50
+ex29722,Rishabh Singla,Avg rating,20%,"Events, target - 8"
+ex29722,Rishabh Singla,LMS,5%,"Health (Update,TAT), target -100%"
+ex29722,Rishabh Singla,Learner Attendance,5%,target - 70%
+ex29722,Rishabh Singla,Cost of program delivery,10%,target 20%
+ex29848,Suman Dubey,Count of students from Exec course applying for the job floated vs their eligibility,60%,target 60%
+ex29848,Suman Dubey,End to end completion of the drive,40%,target - 100%
+ex29907,Yashvi Modi,Count of Students from Exec coursed placed,70%,Target - 3
+ex29907,Yashvi Modi,Average salary of students placed,30%,9 LPA
+ex30010,Anamika Mani,NPS,60%,target - 50
+ex30010,Anamika Mani,Avg rating,20%,"Events, target - 8"
+ex30010,Anamika Mani,LMS,5%,"Health (Update,TAT), target -100%"
+ex30010,Anamika Mani,Learner Attendance,5%,target - 70%
+ex30010,Anamika Mani,Cost of program delivery,10%,target 20%
+ex30125,Aparajita Tiwari,Deliver campaign assets and execute programme launches on schedule while coordinating cross-functional marketing execution.,30%,100% On-time Campaign Launches
+ex30125,Aparajita Tiwari,"Create, refresh and optimise static ad creatives and maintain a structured ad repository.",25%,Ad Creative Excellence
+ex30125,Aparajita Tiwari,Develop and execute LinkedIn and Facebook strategy for Executive Education.,30%,Social Media Strategy
+ex30125,Aparajita Tiwari,Drive brand collaborations and oversee online reputation management.,15%,6–8 Brand Partnerships
+ex30248,Gagandeep Singh,NPS,60%,target - 50
+ex30248,Gagandeep Singh,Avg rating,20%,"Events, target - 8"
+ex30248,Gagandeep Singh,LMS,5%,"Health (Update,TAT), target -100%"
+ex30248,Gagandeep Singh,Learner Attendance,5%,target - 70%
+ex30248,Gagandeep Singh,Cost of program delivery,10%,target 20%
